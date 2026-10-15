@@ -6,6 +6,11 @@ on:
   schedule:
     - cron: "17 14 * * *"  # daily, 14:17 UTC (the city refreshes its sales data monthly, mid-month)
   workflow_dispatch:
+    inputs:
+      force:
+        description: "Rebuild and republish even if the city's data has not changed"
+        type: boolean
+        default: false
   push:
     branches: [main]
 
@@ -36,7 +41,7 @@ jobs:
         run: |
           if git diff --quiet -- raw/; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
       - name: Test, rebuild and commit
-        if: steps.changed.outputs.changed == 'true'
+        if: steps.changed.outputs.changed == 'true' || inputs.force
         run: |
           python -m pytest -q tests
           python src/rsi.py build
@@ -46,7 +51,9 @@ jobs:
           git config user.name "rsi-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add raw data docs
-          git commit -m "Data update: city records through $(python -c 'import json; print(json.load(open("data/rsi.json"))["data_through"])')"
+          THROUGH=$(python -c 'import json; print(json.load(open("data/rsi.json"))["data_through"])')
+          if [ "${{ steps.changed.outputs.changed }}" = "true" ]; then MSG="Data update: city records through $THROUGH"; else MSG="Rebuild (no new records; data through $THROUGH)"; fi
+          git diff --cached --quiet || git commit -m "$MSG"
           git push
 
   deploy:
