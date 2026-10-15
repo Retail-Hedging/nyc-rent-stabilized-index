@@ -22,7 +22,9 @@
     "move_lo": 1.0,
     "move_hi": 1.0,
     "published": true,
-    "settlement": 91.484282
+    "settlement": 91.484282,
+    "kf_level": 4.516167,
+    "kf_var": 0.000784
    },
    {
     "quarter": "2016Q2",
@@ -36,7 +38,9 @@
     "move_lo": 1.02707,
     "move_hi": 1.125509,
     "published": true,
-    "settlement": 96.927746
+    "settlement": 96.927746,
+    "kf_level": 4.573966,
+    "kf_var": 0.000625
    },
    {
     "quarter": "2016Q3",
@@ -50,7 +54,9 @@
     "move_lo": 0.939193,
     "move_hi": 1.032304,
     "published": true,
-    "settlement": 96.866889
+    "settlement": 96.866889,
+    "kf_level": 4.573338,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2016Q4",
@@ -64,7 +70,9 @@
     "move_lo": 0.989019,
     "move_hi": 1.087211,
     "published": true,
-    "settlement": 99.665217
+    "settlement": 99.665217,
+    "kf_level": 4.601817,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q1",
@@ -78,7 +86,9 @@
     "move_lo": 0.933272,
     "move_hi": 1.042574,
     "published": true,
-    "settlement": 99.191454
+    "settlement": 99.191454,
+    "kf_level": 4.597052,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q2",
@@ -92,7 +102,9 @@
     "move_lo": 0.930651,
     "move_hi": 1.051241,
     "published": true,
-    "settlement": 98.239716
+    "settlement": 98.239716,
+    "kf_level": 4.587411,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q3",
@@ -106,7 +118,9 @@
     "move_lo": 0.952054,
     "move_hi": 1.069462,
     "published": true,
-    "settlement": 98.738603
+    "settlement": 98.738603,
+    "kf_level": 4.592476,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q4",
@@ -120,7 +134,9 @@
     "move_lo": 0.952409,
     "move_hi": 1.065695,
     "published": true,
-    "settlement": 99.42547
+    "settlement": 99.42547,
+    "kf_level": 4.599408,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q1",
@@ -134,7 +150,9 @@
     "move_lo": 1.010038,
     "move_hi": 1.126597,
     "published": true,
-    "settlement": 104.773964
+    "settlement": 104.773964,
+    "kf_level": 4.651805,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q2",
@@ -148,7 +166,9 @@
     "move_lo": 0.937994,
     "move_hi": 1.035803,
     "published": true,
-    "settlement": 104.74428
+    "settlement": 104.74428,
+    "kf_level": 4.651522,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q3",
@@ -162,7 +182,9 @@
     "move_lo": 0.928839,
     "move_hi": 1.03047,
     "published": true,
-    "settlement": 102.944774
+    "settlement": 102.944774,
+    "kf_level": 4.634193,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q4",
@@ -176,7 +198,9 @@
     "move_lo": 0.94786,
     "move_hi": 1.055738,
     "published": true,
-    "settlement": 102.596023
+    "settlement": 102.596023,
+    "kf_level": 4.630799,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q1",
@@ -190,7 +214,9 @@
     "move_lo": 0.983683,
     "move_hi": 1.105482,
     "published": true,
-    "settlement": 105.967173
+    "settlement": 105.967173,
+    "kf_level": 4.663129,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q2",
@@ -204,7 +230,9 @@
     "move_lo": 0.883764,
     "move_hi": 0.990346,
     "published": true,
-    "settlement": 101.233616
+    "settlement": 101.233616,
+    "kf_level": 4.617431,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q3",
@@ -218,7 +246,9 @@
     "move_lo": 0.865725,
     "move_hi": 0.990877,
     "published": true,
-    "settlement": 94.377946
+    "settlement": 94.377946,
+    "kf_level": 4.547307,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q4",
@@ -232,7 +262,9 @@
     "move_lo": 0.81215,
     "move_hi": 0.961326,
     "published": true,
-    "settlement": 84.343448
+    "settlement": 84.343448,
+    "kf_level": 4.434897,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q1",
@@ -246,7 +278,9 @@
     "move_lo": 0.936919,
     "move_hi": 1.112182,
     "published": true,
-    "settlement": 83.709014
+    "settlement": 83.709014,
+    "kf_level": 4.427347,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q2",
@@ -260,7 +294,9 @@
     "move_lo": 0.865294,
     "move_hi": 1.056537,
     "published": true,
-    "settlement": 80.671958
+    "settlement": 80.671958,
+    "kf_level": 4.390391,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q3",
@@ -274,7 +310,9 @@
     "move_lo": 0.848476,
     "move_hi": 1.035056,
     "published": true,
-    "settlement": 76.049136
+    "settlement": 76.049136,
+    "kf_level": 4.33138,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q4",
@@ -288,7 +326,9 @@
     "move_lo": 0.884971,
     "move_hi": 1.054423,
     "published": true,
-    "settlement": 73.084267
+    "settlement": 73.084267,
+    "kf_level": 4.291613,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q1",
@@ -302,7 +342,9 @@
     "move_lo": 0.932904,
     "move_hi": 1.100339,
     "published": true,
-    "settlement": 73.223478
+    "settlement": 73.223478,
+    "kf_level": 4.293516,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q2",
@@ -316,7 +358,9 @@
     "move_lo": 0.964181,
     "move_hi": 1.113171,
     "published": true,
-    "settlement": 75.324485
+    "settlement": 75.324485,
+    "kf_level": 4.321805,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q3",
@@ -330,7 +374,9 @@
     "move_lo": 0.912103,
     "move_hi": 1.038656,
     "published": true,
-    "settlement": 74.178303
+    "settlement": 74.178303,
+    "kf_level": 4.306472,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q4",
@@ -344,7 +390,9 @@
     "move_lo": 1.017871,
     "move_hi": 1.141397,
     "published": true,
-    "settlement": 78.441184
+    "settlement": 78.441184,
+    "kf_level": 4.362349,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q1",
@@ -358,7 +406,9 @@
     "move_lo": 0.987331,
     "move_hi": 1.105921,
     "published": true,
-    "settlement": 82.173547
+    "settlement": 82.173547,
+    "kf_level": 4.408833,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q2",
@@ -372,7 +422,9 @@
     "move_lo": 0.914476,
     "move_hi": 1.037524,
     "published": true,
-    "settlement": 81.283528
+    "settlement": 81.283528,
+    "kf_level": 4.397943,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q3",
@@ -386,7 +438,9 @@
     "move_lo": 0.947835,
     "move_hi": 1.085943,
     "published": true,
-    "settlement": 82.024891
+    "settlement": 82.024891,
+    "kf_level": 4.407023,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q4",
@@ -400,7 +454,9 @@
     "move_lo": 0.825026,
     "move_hi": 0.957403,
     "published": true,
-    "settlement": 74.885158
+    "settlement": 74.885158,
+    "kf_level": 4.315956,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q1",
@@ -414,7 +470,9 @@
     "move_lo": 0.886904,
     "move_hi": 1.043536,
     "published": true,
-    "settlement": 71.248722
+    "settlement": 71.248722,
+    "kf_level": 4.266177,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q2",
@@ -428,7 +486,9 @@
     "move_lo": 0.930027,
     "move_hi": 1.105224,
     "published": true,
-    "settlement": 71.271085
+    "settlement": 71.271085,
+    "kf_level": 4.266491,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q3",
@@ -442,7 +502,9 @@
     "move_lo": 0.813767,
     "move_hi": 0.971008,
     "published": true,
-    "settlement": 64.956351
+    "settlement": 64.956351,
+    "kf_level": 4.173716,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q4",
@@ -456,7 +518,9 @@
     "move_lo": 1.063765,
     "move_hi": 1.281107,
     "published": true,
-    "settlement": 71.960646
+    "settlement": 71.960646,
+    "kf_level": 4.276119,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q1",
@@ -470,7 +534,9 @@
     "move_lo": 0.757079,
     "move_hi": 0.918593,
     "published": true,
-    "settlement": 63.726312
+    "settlement": 63.726312,
+    "kf_level": 4.154598,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q2",
@@ -484,7 +550,9 @@
     "move_lo": 1.009038,
     "move_hi": 1.207427,
     "published": true,
-    "settlement": 67.137781
+    "settlement": 67.137781,
+    "kf_level": 4.206747,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q3",
@@ -498,7 +566,9 @@
     "move_lo": 0.868576,
     "move_hi": 1.03357,
     "published": true,
-    "settlement": 65.05601
+    "settlement": 65.05601,
+    "kf_level": 4.175249,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q4",
@@ -512,7 +582,9 @@
     "move_lo": 0.907326,
     "move_hi": 1.06607,
     "published": true,
-    "settlement": 63.781763
+    "settlement": 63.781763,
+    "kf_level": 4.155467,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q1",
@@ -526,7 +598,9 @@
     "move_lo": 0.940349,
     "move_hi": 1.107902,
     "published": true,
-    "settlement": 64.549461
+    "settlement": 64.549461,
+    "kf_level": 4.167432,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q2",
@@ -540,7 +614,9 @@
     "move_lo": 0.912126,
     "move_hi": 1.059145,
     "published": true,
-    "settlement": 63.838477
+    "settlement": 63.838477,
+    "kf_level": 4.156356,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q3",
@@ -554,7 +630,9 @@
     "move_lo": 0.931433,
     "move_hi": 1.07592,
     "published": true,
-    "settlement": 63.742964
+    "settlement": 63.742964,
+    "kf_level": 4.154859,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q4",
@@ -568,7 +646,9 @@
     "move_lo": 0.88891,
     "move_hi": 1.043724,
     "published": true,
-    "settlement": 61.867114
+    "settlement": 61.867114,
+    "kf_level": 4.124989,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q1",
@@ -582,7 +662,9 @@
     "move_lo": 0.830336,
     "move_hi": 0.96254,
     "published": true,
-    "settlement": 56.278987
+    "settlement": 56.278987,
+    "kf_level": 4.030321,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q2",
@@ -596,7 +678,9 @@
     "move_lo": 0.947347,
     "move_hi": 1.098512,
     "published": true,
-    "settlement": 56.03698
+    "settlement": 56.03698,
+    "kf_level": 4.026012,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q3",
@@ -610,7 +694,9 @@
     "move_lo": 0.940265,
     "move_hi": 1.116592,
     "published": true,
-    "settlement": 57.070893
+    "settlement": 57.070893,
+    "kf_level": 4.044294,
+    "kf_var": 0.000618
    }
   ],
   "manhattan": [
@@ -626,7 +712,9 @@
     "move_lo": 1.0,
     "move_hi": 1.0,
     "published": true,
-    "settlement": 100.886525
+    "settlement": 100.886525,
+    "kf_level": 4.613996,
+    "kf_var": 0.000784
    },
    {
     "quarter": "2016Q2",
@@ -640,7 +728,9 @@
     "move_lo": 0.969378,
     "move_hi": 1.225381,
     "published": true,
-    "settlement": 108.055316
+    "settlement": 108.055316,
+    "kf_level": 4.682643,
+    "kf_var": 0.000625
    },
    {
     "quarter": "2016Q3",
@@ -654,7 +744,9 @@
     "move_lo": 0.751062,
     "move_hi": 0.933241,
     "published": true,
-    "settlement": 95.223539
+    "settlement": 95.223539,
+    "kf_level": 4.556227,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2016Q4",
@@ -668,7 +760,9 @@
     "move_lo": 1.121515,
     "move_hi": 1.353656,
     "published": true,
-    "settlement": 109.304783
+    "settlement": 109.304783,
+    "kf_level": 4.69414,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q1",
@@ -682,7 +776,9 @@
     "move_lo": 0.812145,
     "move_hi": 1.011767,
     "published": true,
-    "settlement": 104.156327
+    "settlement": 104.156327,
+    "kf_level": 4.645893,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q2",
@@ -696,7 +792,9 @@
     "move_lo": 0.900286,
     "move_hi": 1.160146,
     "published": true,
-    "settlement": 104.882111
+    "settlement": 104.882111,
+    "kf_level": 4.652837,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q3",
@@ -710,7 +808,9 @@
     "move_lo": 0.893806,
     "move_hi": 1.149907,
     "published": true,
-    "settlement": 106.177657
+    "settlement": 106.177657,
+    "kf_level": 4.665114,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q4",
@@ -724,7 +824,9 @@
     "move_lo": 0.900564,
     "move_hi": 1.157084,
     "published": true,
-    "settlement": 108.195609
+    "settlement": 108.195609,
+    "kf_level": 4.683941,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q1",
@@ -738,7 +840,9 @@
     "move_lo": 0.806523,
     "move_hi": 1.04768,
     "published": true,
-    "settlement": 101.648175
+    "settlement": 101.648175,
+    "kf_level": 4.621518,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q2",
@@ -752,7 +856,9 @@
     "move_lo": 1.006207,
     "move_hi": 1.323312,
     "published": true,
-    "settlement": 112.301905
+    "settlement": 112.301905,
+    "kf_level": 4.721191,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q3",
@@ -766,7 +872,9 @@
     "move_lo": 0.770327,
     "move_hi": 1.03147,
     "published": true,
-    "settlement": 104.754567
+    "settlement": 104.754567,
+    "kf_level": 4.65162,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q4",
@@ -780,7 +888,9 @@
     "move_lo": 0.830699,
     "move_hi": 1.079704,
     "published": true,
-    "settlement": 98.890239
+    "settlement": 98.890239,
+    "kf_level": 4.594011,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q1",
@@ -794,7 +904,9 @@
     "move_lo": 1.06702,
     "move_hi": 1.40261,
     "published": true,
-    "settlement": 114.523413
+    "settlement": 114.523413,
+    "kf_level": 4.740779,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q2",
@@ -808,7 +920,9 @@
     "move_lo": 0.737022,
     "move_hi": 0.956155,
     "published": true,
-    "settlement": 102.910219
+    "settlement": 102.910219,
+    "kf_level": 4.633857,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q3",
@@ -822,7 +936,9 @@
     "move_lo": 0.741574,
     "move_hi": 1.015833,
     "published": true,
-    "settlement": 89.977935
+    "settlement": 89.977935,
+    "kf_level": 4.499564,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q4",
@@ -836,7 +952,9 @@
     "move_lo": 0.73986,
     "move_hi": 1.068085,
     "published": true,
-    "settlement": 79.705935
+    "settlement": 79.705935,
+    "kf_level": 4.378344,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q1",
@@ -850,7 +968,9 @@
     "move_lo": 0.893301,
     "move_hi": 1.240704,
     "published": true,
-    "settlement": 80.902645
+    "settlement": 80.902645,
+    "kf_level": 4.393247,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q2",
@@ -864,7 +984,9 @@
     "move_lo": 0.55078,
     "move_hi": 0.850107,
     "published": false,
-    "settlement": 60.174698
+    "settlement": 60.174698,
+    "kf_level": 4.097252,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q3",
@@ -878,7 +1000,9 @@
     "move_lo": 0.954827,
     "move_hi": 1.503658,
     "published": true,
-    "settlement": 65.184422
+    "settlement": 65.184422,
+    "kf_level": 4.177221,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q4",
@@ -892,7 +1016,9 @@
     "move_lo": 0.66967,
     "move_hi": 0.979179,
     "published": true,
-    "settlement": 56.135446
+    "settlement": 56.135446,
+    "kf_level": 4.027767,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q1",
@@ -906,7 +1032,9 @@
     "move_lo": 1.086822,
     "move_hi": 1.58845,
     "published": true,
-    "settlement": 67.451449
+    "settlement": 67.451449,
+    "kf_level": 4.211408,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q2",
@@ -920,7 +1048,9 @@
     "move_lo": 0.872717,
     "move_hi": 1.228088,
     "published": true,
-    "settlement": 72.065929
+    "settlement": 72.065929,
+    "kf_level": 4.277581,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q3",
@@ -934,7 +1064,9 @@
     "move_lo": 0.774834,
     "move_hi": 1.007685,
     "published": true,
-    "settlement": 66.28921
+    "settlement": 66.28921,
+    "kf_level": 4.194027,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q4",
@@ -948,7 +1080,9 @@
     "move_lo": 0.988043,
     "move_hi": 1.257566,
     "published": true,
-    "settlement": 70.948812
+    "settlement": 70.948812,
+    "kf_level": 4.261959,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q1",
@@ -962,7 +1096,9 @@
     "move_lo": 0.915675,
     "move_hi": 1.13432,
     "published": true,
-    "settlement": 73.060332
+    "settlement": 73.060332,
+    "kf_level": 4.291286,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q2",
@@ -976,7 +1112,9 @@
     "move_lo": 0.82603,
     "move_hi": 1.053434,
     "published": true,
-    "settlement": 69.593045
+    "settlement": 69.593045,
+    "kf_level": 4.242665,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q3",
@@ -990,7 +1128,9 @@
     "move_lo": 0.98896,
     "move_hi": 1.315749,
     "published": true,
-    "settlement": 76.415223
+    "settlement": 76.415223,
+    "kf_level": 4.336182,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q4",
@@ -1004,7 +1144,9 @@
     "move_lo": 0.681675,
     "move_hi": 0.938679,
     "published": true,
-    "settlement": 65.362401
+    "settlement": 65.362401,
+    "kf_level": 4.179947,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q1",
@@ -1018,7 +1160,9 @@
     "move_lo": 0.733296,
     "move_hi": 1.032008,
     "published": true,
-    "settlement": 56.657577
+    "settlement": 56.657577,
+    "kf_level": 4.037026,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q2",
@@ -1032,7 +1176,9 @@
     "move_lo": 1.005005,
     "move_hi": 1.416092,
     "published": true,
-    "settlement": 63.175292
+    "settlement": 63.175292,
+    "kf_level": 4.145913,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q3",
@@ -1046,7 +1192,9 @@
     "move_lo": 0.587591,
     "move_hi": 0.808552,
     "published": true,
-    "settlement": 48.209094
+    "settlement": 48.209094,
+    "kf_level": 3.875548,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q4",
@@ -1060,7 +1208,9 @@
     "move_lo": 1.092168,
     "move_hi": 1.654187,
     "published": true,
-    "settlement": 57.485433
+    "settlement": 57.485433,
+    "kf_level": 4.051532,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q1",
@@ -1074,7 +1224,9 @@
     "move_lo": 0.664606,
     "move_hi": 1.045329,
     "published": true,
-    "settlement": 51.685085
+    "settlement": 51.685085,
+    "kf_level": 3.945169,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q2",
@@ -1088,7 +1240,9 @@
     "move_lo": 0.927912,
     "move_hi": 1.399929,
     "published": true,
-    "settlement": 56.02519
+    "settlement": 56.02519,
+    "kf_level": 4.025801,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q3",
@@ -1102,7 +1256,9 @@
     "move_lo": 0.900216,
     "move_hi": 1.297958,
     "published": true,
-    "settlement": 60.595987
+    "settlement": 60.595987,
+    "kf_level": 4.104229,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q4",
@@ -1116,7 +1272,9 @@
     "move_lo": 0.768256,
     "move_hi": 1.067453,
     "published": true,
-    "settlement": 56.975481
+    "settlement": 56.975481,
+    "kf_level": 4.042621,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q1",
@@ -1130,7 +1288,9 @@
     "move_lo": 0.902523,
     "move_hi": 1.379647,
     "published": true,
-    "settlement": 61.315337
+    "settlement": 61.315337,
+    "kf_level": 4.11603,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q2",
@@ -1144,7 +1304,9 @@
     "move_lo": 0.827185,
     "move_hi": 1.264518,
     "published": true,
-    "settlement": 63.388662
+    "settlement": 63.388662,
+    "kf_level": 4.149285,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q3",
@@ -1158,7 +1320,9 @@
     "move_lo": 0.863164,
     "move_hi": 1.244727,
     "published": true,
-    "settlement": 65.667998
+    "settlement": 65.667998,
+    "kf_level": 4.184612,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q4",
@@ -1172,7 +1336,9 @@
     "move_lo": 0.639036,
     "move_hi": 0.982158,
     "published": true,
-    "settlement": 55.061656
+    "settlement": 55.061656,
+    "kf_level": 4.008454,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q1",
@@ -1186,7 +1352,9 @@
     "move_lo": 0.798352,
     "move_hi": 1.213113,
     "published": true,
-    "settlement": 52.382227
+    "settlement": 52.382227,
+    "kf_level": 3.958567,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q2",
@@ -1200,7 +1368,9 @@
     "move_lo": 0.884542,
     "move_hi": 1.256753,
     "published": true,
-    "settlement": 54.04095
+    "settlement": 54.04095,
+    "kf_level": 3.989742,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q3",
@@ -1214,7 +1384,9 @@
     "move_lo": 0.841184,
     "move_hi": 1.250324,
     "published": true,
-    "settlement": 55.491446
+    "settlement": 55.491446,
+    "kf_level": 4.016229,
+    "kf_var": 0.000618
    }
   ],
   "bronx": [
@@ -1230,7 +1402,9 @@
     "move_lo": 1.0,
     "move_hi": 1.0,
     "published": true,
-    "settlement": 86.593823
+    "settlement": 86.593823,
+    "kf_level": 4.461228,
+    "kf_var": 0.000784
    },
    {
     "quarter": "2016Q2",
@@ -1244,7 +1418,9 @@
     "move_lo": 0.967936,
     "move_hi": 1.096075,
     "published": true,
-    "settlement": 88.660442
+    "settlement": 88.660442,
+    "kf_level": 4.484814,
+    "kf_var": 0.000625
    },
    {
     "quarter": "2016Q3",
@@ -1258,7 +1434,9 @@
     "move_lo": 1.005681,
     "move_hi": 1.14968,
     "published": true,
-    "settlement": 94.328987
+    "settlement": 94.328987,
+    "kf_level": 4.546789,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2016Q4",
@@ -1272,7 +1450,9 @@
     "move_lo": 0.96828,
     "move_hi": 1.119501,
     "published": true,
-    "settlement": 98.658293
+    "settlement": 98.658293,
+    "kf_level": 4.591662,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q1",
@@ -1286,7 +1466,9 @@
     "move_lo": 0.92855,
     "move_hi": 1.087822,
     "published": true,
-    "settlement": 99.994466
+    "settlement": 99.994466,
+    "kf_level": 4.605115,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q2",
@@ -1300,7 +1482,9 @@
     "move_lo": 0.954124,
     "move_hi": 1.118439,
     "published": true,
-    "settlement": 102.881143
+    "settlement": 102.881143,
+    "kf_level": 4.633574,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q3",
@@ -1314,7 +1498,9 @@
     "move_lo": 0.934642,
     "move_hi": 1.08079,
     "published": true,
-    "settlement": 103.915371
+    "settlement": 103.915371,
+    "kf_level": 4.643577,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q4",
@@ -1328,7 +1514,9 @@
     "move_lo": 0.90668,
     "move_hi": 1.053594,
     "published": true,
-    "settlement": 102.273783
+    "settlement": 102.273783,
+    "kf_level": 4.627653,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q1",
@@ -1342,7 +1530,9 @@
     "move_lo": 1.051861,
     "move_hi": 1.215224,
     "published": true,
-    "settlement": 112.287682
+    "settlement": 112.287682,
+    "kf_level": 4.721064,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q2",
@@ -1356,7 +1546,9 @@
     "move_lo": 0.834432,
     "move_hi": 0.963913,
     "published": true,
-    "settlement": 105.106877
+    "settlement": 105.106877,
+    "kf_level": 4.654978,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q3",
@@ -1370,7 +1562,9 @@
     "move_lo": 0.965325,
     "move_hi": 1.121706,
     "published": true,
-    "settlement": 106.950174
+    "settlement": 106.950174,
+    "kf_level": 4.672363,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q4",
@@ -1384,7 +1578,9 @@
     "move_lo": 0.887047,
     "move_hi": 1.026314,
     "published": true,
-    "settlement": 103.443889
+    "settlement": 103.443889,
+    "kf_level": 4.639029,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q1",
@@ -1398,7 +1594,9 @@
     "move_lo": 1.000466,
     "move_hi": 1.217425,
     "published": true,
-    "settlement": 111.021223
+    "settlement": 111.021223,
+    "kf_level": 4.709721,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q2",
@@ -1412,7 +1610,9 @@
     "move_lo": 0.792427,
     "move_hi": 0.985723,
     "published": true,
-    "settlement": 102.236316
+    "settlement": 102.236316,
+    "kf_level": 4.627287,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q3",
@@ -1426,7 +1626,9 @@
     "move_lo": 0.820025,
     "move_hi": 1.027948,
     "published": false,
-    "settlement": 93.924608
+    "settlement": 93.924608,
+    "kf_level": 4.542492,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q4",
@@ -1440,7 +1642,9 @@
     "move_lo": 0.906348,
     "move_hi": 1.267651,
     "published": false,
-    "settlement": 97.44492
+    "settlement": 97.44492,
+    "kf_level": 4.579287,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q1",
@@ -1454,7 +1658,9 @@
     "move_lo": 0.751662,
     "move_hi": 1.029751,
     "published": true,
-    "settlement": 88.773543
+    "settlement": 88.773543,
+    "kf_level": 4.486089,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q2",
@@ -1468,7 +1674,9 @@
     "move_lo": 0.919321,
     "move_hi": 1.187653,
     "published": false,
-    "settlement": 90.108114
+    "settlement": 90.108114,
+    "kf_level": 4.50101,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q3",
@@ -1482,7 +1690,9 @@
     "move_lo": 0.884314,
     "move_hi": 1.160908,
     "published": false,
-    "settlement": 91.333637
+    "settlement": 91.333637,
+    "kf_level": 4.514519,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q4",
@@ -1496,7 +1706,9 @@
     "move_lo": 0.693037,
     "move_hi": 0.949631,
     "published": false,
-    "settlement": 77.668455
+    "settlement": 77.668455,
+    "kf_level": 4.352449,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q1",
@@ -1510,7 +1722,9 @@
     "move_lo": 0.954365,
     "move_hi": 1.291869,
     "published": true,
-    "settlement": 81.508655
+    "settlement": 81.508655,
+    "kf_level": 4.400709,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q2",
@@ -1524,7 +1738,9 @@
     "move_lo": 0.921065,
     "move_hi": 1.089201,
     "published": true,
-    "settlement": 82.449631
+    "settlement": 82.449631,
+    "kf_level": 4.412188,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q3",
@@ -1538,7 +1754,9 @@
     "move_lo": 0.935598,
     "move_hi": 1.112194,
     "published": true,
-    "settlement": 83.95595
+    "settlement": 83.95595,
+    "kf_level": 4.430292,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q4",
@@ -1552,7 +1770,9 @@
     "move_lo": 0.926405,
     "move_hi": 1.108722,
     "published": true,
-    "settlement": 85.172056
+    "settlement": 85.172056,
+    "kf_level": 4.444673,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q1",
@@ -1566,7 +1786,9 @@
     "move_lo": 1.055111,
     "move_hi": 1.261379,
     "published": true,
-    "settlement": 95.622371
+    "settlement": 95.622371,
+    "kf_level": 4.560407,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q2",
@@ -1580,7 +1802,9 @@
     "move_lo": 0.795173,
     "move_hi": 0.959465,
     "published": true,
-    "settlement": 88.077764
+    "settlement": 88.077764,
+    "kf_level": 4.47822,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q3",
@@ -1594,7 +1818,9 @@
     "move_lo": 0.903608,
     "move_hi": 1.138904,
     "published": true,
-    "settlement": 87.544862
+    "settlement": 87.544862,
+    "kf_level": 4.472151,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q4",
@@ -1608,7 +1834,9 @@
     "move_lo": 0.909284,
     "move_hi": 1.316465,
     "published": false,
-    "settlement": 93.856869
+    "settlement": 93.856869,
+    "kf_level": 4.541771,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q1",
@@ -1622,7 +1850,9 @@
     "move_lo": 0.615554,
     "move_hi": 0.865784,
     "published": false,
-    "settlement": 74.320649
+    "settlement": 74.320649,
+    "kf_level": 4.308389,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q2",
@@ -1636,7 +1866,9 @@
     "move_lo": 0.939386,
     "move_hi": 1.212488,
     "published": false,
-    "settlement": 74.46478
+    "settlement": 74.46478,
+    "kf_level": 4.310326,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q3",
@@ -1650,7 +1882,9 @@
     "move_lo": 0.869932,
     "move_hi": 1.136557,
     "published": false,
-    "settlement": 74.163109
+    "settlement": 74.163109,
+    "kf_level": 4.306267,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q4",
@@ -1664,7 +1898,9 @@
     "move_lo": 0.75705,
     "move_hi": 1.198479,
     "published": false,
-    "settlement": 71.311672
+    "settlement": 71.311672,
+    "kf_level": 4.26706,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q1",
@@ -1678,7 +1914,9 @@
     "move_lo": 0.585471,
     "move_hi": 0.973742,
     "published": false,
-    "settlement": 56.669134
+    "settlement": 56.669134,
+    "kf_level": 4.03723,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q2",
@@ -1692,7 +1930,9 @@
     "move_lo": 1.142181,
     "move_hi": 1.671495,
     "published": false,
-    "settlement": 69.654228
+    "settlement": 69.654228,
+    "kf_level": 4.243543,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q3",
@@ -1706,7 +1946,9 @@
     "move_lo": 0.740346,
     "move_hi": 1.134439,
     "published": false,
-    "settlement": 67.924341
+    "settlement": 67.924341,
+    "kf_level": 4.218394,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q4",
@@ -1720,7 +1962,9 @@
     "move_lo": 0.703816,
     "move_hi": 1.065381,
     "published": true,
-    "settlement": 60.314532
+    "settlement": 60.314532,
+    "kf_level": 4.099573,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q1",
@@ -1734,7 +1978,9 @@
     "move_lo": 0.864219,
     "move_hi": 1.277714,
     "published": true,
-    "settlement": 61.161812
+    "settlement": 61.161812,
+    "kf_level": 4.113523,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q2",
@@ -1748,7 +1994,9 @@
     "move_lo": 0.934512,
     "move_hi": 1.187645,
     "published": true,
-    "settlement": 63.915953
+    "settlement": 63.915953,
+    "kf_level": 4.157569,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q3",
@@ -1762,7 +2010,9 @@
     "move_lo": 0.801516,
     "move_hi": 0.9666,
     "published": true,
-    "settlement": 58.338991
+    "settlement": 58.338991,
+    "kf_level": 4.066271,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q4",
@@ -1776,7 +2026,9 @@
     "move_lo": 0.811872,
     "move_hi": 1.065058,
     "published": true,
-    "settlement": 54.035596
+    "settlement": 54.035596,
+    "kf_level": 3.989643,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q1",
@@ -1790,7 +2042,9 @@
     "move_lo": 0.769836,
     "move_hi": 1.02455,
     "published": true,
-    "settlement": 48.41806
+    "settlement": 48.41806,
+    "kf_level": 3.879873,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q2",
@@ -1804,7 +2058,9 @@
     "move_lo": 0.834964,
     "move_hi": 1.087186,
     "published": true,
-    "settlement": 45.535893
+    "settlement": 45.535893,
+    "kf_level": 3.818501,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q3",
@@ -1818,7 +2074,9 @@
     "move_lo": 0.915598,
     "move_hi": 1.316535,
     "published": false,
-    "settlement": 48.384065
+    "settlement": 48.384065,
+    "kf_level": 3.879171,
+    "kf_var": 0.000618
    }
   ],
   "brooklyn": [
@@ -1834,7 +2092,9 @@
     "move_lo": 1.0,
     "move_hi": 1.0,
     "published": true,
-    "settlement": 95.27748
+    "settlement": 95.27748,
+    "kf_level": 4.556793,
+    "kf_var": 0.000784
    },
    {
     "quarter": "2016Q2",
@@ -1848,7 +2108,9 @@
     "move_lo": 0.961693,
     "move_hi": 1.131401,
     "published": true,
-    "settlement": 98.538521
+    "settlement": 98.538521,
+    "kf_level": 4.590448,
+    "kf_var": 0.000625
    },
    {
     "quarter": "2016Q3",
@@ -1862,7 +2124,9 @@
     "move_lo": 0.950231,
     "move_hi": 1.115256,
     "published": true,
-    "settlement": 101.501967
+    "settlement": 101.501967,
+    "kf_level": 4.620078,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2016Q4",
@@ -1876,7 +2140,9 @@
     "move_lo": 0.846649,
     "move_hi": 1.00743,
     "published": true,
-    "settlement": 95.930198
+    "settlement": 95.930198,
+    "kf_level": 4.563621,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q1",
@@ -1890,7 +2156,9 @@
     "move_lo": 0.926431,
     "move_hi": 1.139169,
     "published": true,
-    "settlement": 96.826609
+    "settlement": 96.826609,
+    "kf_level": 4.572922,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q2",
@@ -1904,7 +2172,9 @@
     "move_lo": 0.801238,
     "move_hi": 0.999826,
     "published": true,
-    "settlement": 88.895427
+    "settlement": 88.895427,
+    "kf_level": 4.487461,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q3",
@@ -1918,7 +2188,9 @@
     "move_lo": 0.929655,
     "move_hi": 1.147396,
     "published": true,
-    "settlement": 89.553023
+    "settlement": 89.553023,
+    "kf_level": 4.494831,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q4",
@@ -1932,7 +2204,9 @@
     "move_lo": 0.975721,
     "move_hi": 1.182523,
     "published": true,
-    "settlement": 94.897086
+    "settlement": 94.897086,
+    "kf_level": 4.552793,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q1",
@@ -1946,7 +2220,9 @@
     "move_lo": 0.963026,
     "move_hi": 1.165249,
     "published": true,
-    "settlement": 100.533694
+    "settlement": 100.533694,
+    "kf_level": 4.610493,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q2",
@@ -1960,7 +2236,9 @@
     "move_lo": 0.886194,
     "move_hi": 1.047645,
     "published": true,
-    "settlement": 98.83161
+    "settlement": 98.83161,
+    "kf_level": 4.593417,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q3",
@@ -1974,7 +2252,9 @@
     "move_lo": 0.904038,
     "move_hi": 1.064779,
     "published": true,
-    "settlement": 97.006545
+    "settlement": 97.006545,
+    "kf_level": 4.574778,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q4",
@@ -1988,7 +2268,9 @@
     "move_lo": 1.021476,
     "move_hi": 1.229047,
     "published": true,
-    "settlement": 105.690802
+    "settlement": 105.690802,
+    "kf_level": 4.660518,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q1",
@@ -2002,7 +2284,9 @@
     "move_lo": 0.827989,
     "move_hi": 1.023543,
     "published": true,
-    "settlement": 100.827977
+    "settlement": 100.827977,
+    "kf_level": 4.613416,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q2",
@@ -2016,7 +2300,9 @@
     "move_lo": 0.906254,
     "move_hi": 1.113177,
     "published": true,
-    "settlement": 100.174581
+    "settlement": 100.174581,
+    "kf_level": 4.606914,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q3",
@@ -2030,7 +2316,9 @@
     "move_lo": 0.80594,
     "move_hi": 1.044764,
     "published": true,
-    "settlement": 93.48014
+    "settlement": 93.48014,
+    "kf_level": 4.537749,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q4",
@@ -2044,7 +2332,9 @@
     "move_lo": 0.783404,
     "move_hi": 1.073549,
     "published": true,
-    "settlement": 86.044276
+    "settlement": 86.044276,
+    "kf_level": 4.454862,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q1",
@@ -2058,7 +2348,9 @@
     "move_lo": 0.83967,
     "move_hi": 1.183896,
     "published": true,
-    "settlement": 84.351109
+    "settlement": 84.351109,
+    "kf_level": 4.434988,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q2",
@@ -2072,7 +2364,9 @@
     "move_lo": 0.852535,
     "move_hi": 1.207418,
     "published": true,
-    "settlement": 84.961155
+    "settlement": 84.961155,
+    "kf_level": 4.442194,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q3",
@@ -2086,7 +2380,9 @@
     "move_lo": 0.716434,
     "move_hi": 1.031645,
     "published": true,
-    "settlement": 75.530537
+    "settlement": 75.530537,
+    "kf_level": 4.324537,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q4",
@@ -2100,7 +2396,9 @@
     "move_lo": 0.939389,
     "move_hi": 1.333643,
     "published": true,
-    "settlement": 80.51979
+    "settlement": 80.51979,
+    "kf_level": 4.388503,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q1",
@@ -2114,7 +2412,9 @@
     "move_lo": 0.783678,
     "move_hi": 1.024374,
     "published": true,
-    "settlement": 74.845913
+    "settlement": 74.845913,
+    "kf_level": 4.315432,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q2",
@@ -2128,7 +2428,9 @@
     "move_lo": 0.911952,
     "move_hi": 1.165564,
     "published": true,
-    "settlement": 75.492751
+    "settlement": 75.492751,
+    "kf_level": 4.324037,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q3",
@@ -2142,7 +2444,9 @@
     "move_lo": 0.872465,
     "move_hi": 1.08753,
     "published": true,
-    "settlement": 74.080365
+    "settlement": 74.080365,
+    "kf_level": 4.305151,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q4",
@@ -2156,7 +2460,9 @@
     "move_lo": 1.024592,
     "move_hi": 1.266051,
     "published": true,
-    "settlement": 81.755483
+    "settlement": 81.755483,
+    "kf_level": 4.403733,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q1",
@@ -2170,7 +2476,9 @@
     "move_lo": 0.884051,
     "move_hi": 1.108761,
     "published": true,
-    "settlement": 82.822788
+    "settlement": 82.822788,
+    "kf_level": 4.416703,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q2",
@@ -2184,7 +2492,9 @@
     "move_lo": 0.980288,
     "move_hi": 1.23447,
     "published": true,
-    "settlement": 89.535876
+    "settlement": 89.535876,
+    "kf_level": 4.494639,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q3",
@@ -2198,7 +2508,9 @@
     "move_lo": 0.886389,
     "move_hi": 1.104564,
     "published": true,
-    "settlement": 90.268499
+    "settlement": 90.268499,
+    "kf_level": 4.502789,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q4",
@@ -2212,7 +2524,9 @@
     "move_lo": 0.755037,
     "move_hi": 0.958864,
     "published": true,
-    "settlement": 79.613075
+    "settlement": 79.613075,
+    "kf_level": 4.377178,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q1",
@@ -2226,7 +2540,9 @@
     "move_lo": 0.895996,
     "move_hi": 1.187564,
     "published": true,
-    "settlement": 79.446366
+    "settlement": 79.446366,
+    "kf_level": 4.375082,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q2",
@@ -2240,7 +2556,9 @@
     "move_lo": 0.81661,
     "move_hi": 1.10638,
     "published": true,
-    "settlement": 76.296297
+    "settlement": 76.296297,
+    "kf_level": 4.334624,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q3",
@@ -2254,7 +2572,9 @@
     "move_lo": 0.921664,
     "move_hi": 1.275634,
     "published": true,
-    "settlement": 80.630721
+    "settlement": 80.630721,
+    "kf_level": 4.38988,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q4",
@@ -2268,7 +2588,9 @@
     "move_lo": 0.900129,
     "move_hi": 1.270987,
     "published": true,
-    "settlement": 86.023689
+    "settlement": 86.023689,
+    "kf_level": 4.454623,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q1",
@@ -2282,7 +2604,9 @@
     "move_lo": 0.703513,
     "move_hi": 0.982823,
     "published": true,
-    "settlement": 75.403176
+    "settlement": 75.403176,
+    "kf_level": 4.322849,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q2",
@@ -2296,7 +2620,9 @@
     "move_lo": 0.959056,
     "move_hi": 1.303026,
     "published": true,
-    "settlement": 80.0652
+    "settlement": 80.0652,
+    "kf_level": 4.382841,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q3",
@@ -2310,7 +2636,9 @@
     "move_lo": 0.722161,
     "move_hi": 0.984726,
     "published": true,
-    "settlement": 70.890715
+    "settlement": 70.890715,
+    "kf_level": 4.261139,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q4",
@@ -2324,7 +2652,9 @@
     "move_lo": 0.894723,
     "move_hi": 1.182546,
     "published": true,
-    "settlement": 70.643107
+    "settlement": 70.643107,
+    "kf_level": 4.257641,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q1",
@@ -2338,7 +2668,9 @@
     "move_lo": 0.869006,
     "move_hi": 1.12672,
     "published": true,
-    "settlement": 70.006238
+    "settlement": 70.006238,
+    "kf_level": 4.248584,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q2",
@@ -2352,7 +2684,9 @@
     "move_lo": 0.890821,
     "move_hi": 1.185391,
     "published": true,
-    "settlement": 71.388632
+    "settlement": 71.388632,
+    "kf_level": 4.268139,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q3",
@@ -2366,7 +2700,9 @@
     "move_lo": 0.777146,
     "move_hi": 1.061419,
     "published": true,
-    "settlement": 66.445233
+    "settlement": 66.445233,
+    "kf_level": 4.196378,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q4",
@@ -2380,7 +2716,9 @@
     "move_lo": 0.927626,
     "move_hi": 1.27611,
     "published": true,
-    "settlement": 69.944393
+    "settlement": 69.944393,
+    "kf_level": 4.247701,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q1",
@@ -2394,7 +2732,9 @@
     "move_lo": 0.736826,
     "move_hi": 0.964452,
     "published": true,
-    "settlement": 61.799098
+    "settlement": 61.799098,
+    "kf_level": 4.123889,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q2",
@@ -2408,7 +2748,9 @@
     "move_lo": 1.006981,
     "move_hi": 1.283256,
     "published": true,
-    "settlement": 66.60377
+    "settlement": 66.60377,
+    "kf_level": 4.198761,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q3",
@@ -2422,7 +2764,9 @@
     "move_lo": 0.856781,
     "move_hi": 1.126239,
     "published": true,
-    "settlement": 66.721679
+    "settlement": 66.721679,
+    "kf_level": 4.20053,
+    "kf_var": 0.000618
    }
   ],
   "queens": [
@@ -2438,7 +2782,9 @@
     "move_lo": 1.0,
     "move_hi": 1.0,
     "published": true,
-    "settlement": 90.606473
+    "settlement": 90.606473,
+    "kf_level": 4.506526,
+    "kf_var": 0.000784
    },
    {
     "quarter": "2016Q2",
@@ -2452,7 +2798,9 @@
     "move_lo": 0.959625,
     "move_hi": 1.155217,
     "published": true,
-    "settlement": 94.408216
+    "settlement": 94.408216,
+    "kf_level": 4.547628,
+    "kf_var": 0.000625
    },
    {
     "quarter": "2016Q3",
@@ -2466,7 +2814,9 @@
     "move_lo": 0.929152,
     "move_hi": 1.13935,
     "published": true,
-    "settlement": 97.35195
+    "settlement": 97.35195,
+    "kf_level": 4.578333,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2016Q4",
@@ -2480,7 +2830,9 @@
     "move_lo": 0.943578,
     "move_hi": 1.152585,
     "published": true,
-    "settlement": 101.281258
+    "settlement": 101.281258,
+    "kf_level": 4.617901,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q1",
@@ -2494,7 +2846,9 @@
     "move_lo": 0.807865,
     "move_hi": 1.059443,
     "published": false,
-    "settlement": 96.055099
+    "settlement": 96.055099,
+    "kf_level": 4.564922,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q2",
@@ -2508,7 +2862,9 @@
     "move_lo": 0.983883,
     "move_hi": 1.316766,
     "published": true,
-    "settlement": 105.192577
+    "settlement": 105.192577,
+    "kf_level": 4.655793,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q3",
@@ -2522,7 +2878,9 @@
     "move_lo": 0.892421,
     "move_hi": 1.196529,
     "published": true,
-    "settlement": 110.043984
+    "settlement": 110.043984,
+    "kf_level": 4.70088,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q4",
@@ -2536,7 +2894,9 @@
     "move_lo": 0.755187,
     "move_hi": 1.024607,
     "published": true,
-    "settlement": 100.414381
+    "settlement": 100.414381,
+    "kf_level": 4.609305,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q1",
@@ -2550,7 +2910,9 @@
     "move_lo": 1.009495,
     "move_hi": 1.346593,
     "published": true,
-    "settlement": 111.160324
+    "settlement": 111.160324,
+    "kf_level": 4.710974,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q2",
@@ -2564,7 +2926,9 @@
     "move_lo": 0.853838,
     "move_hi": 1.074547,
     "published": true,
-    "settlement": 109.785823
+    "settlement": 109.785823,
+    "kf_level": 4.698531,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q3",
@@ -2578,7 +2942,9 @@
     "move_lo": 0.899099,
     "move_hi": 1.171685,
     "published": true,
-    "settlement": 111.768664
+    "settlement": 111.768664,
+    "kf_level": 4.716431,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q4",
@@ -2592,7 +2958,9 @@
     "move_lo": 0.851876,
     "move_hi": 1.133044,
     "published": true,
-    "settlement": 110.637565
+    "settlement": 110.637565,
+    "kf_level": 4.70626,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q1",
@@ -2606,7 +2974,9 @@
     "move_lo": 0.888073,
     "move_hi": 1.098235,
     "published": true,
-    "settlement": 109.317167
+    "settlement": 109.317167,
+    "kf_level": 4.694253,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q2",
@@ -2620,7 +2990,9 @@
     "move_lo": 0.82815,
     "move_hi": 1.01698,
     "published": true,
-    "settlement": 101.902337
+    "settlement": 101.902337,
+    "kf_level": 4.624015,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q3",
@@ -2634,7 +3006,9 @@
     "move_lo": 0.915135,
     "move_hi": 1.151809,
     "published": true,
-    "settlement": 102.505151
+    "settlement": 102.505151,
+    "kf_level": 4.629913,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q4",
@@ -2648,7 +3022,9 @@
     "move_lo": 0.722987,
     "move_hi": 0.946763,
     "published": true,
-    "settlement": 88.386535
+    "settlement": 88.386535,
+    "kf_level": 4.48172,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q1",
@@ -2662,7 +3038,9 @@
     "move_lo": 0.915189,
     "move_hi": 1.233901,
     "published": false,
-    "settlement": 89.863494
+    "settlement": 89.863494,
+    "kf_level": 4.498292,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q2",
@@ -2676,7 +3054,9 @@
     "move_lo": 0.762876,
     "move_hi": 1.121916,
     "published": false,
-    "settlement": 84.812827
+    "settlement": 84.812827,
+    "kf_level": 4.440447,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q3",
@@ -2690,7 +3070,9 @@
     "move_lo": 0.757203,
     "move_hi": 1.079457,
     "published": true,
-    "settlement": 77.378412
+    "settlement": 77.378412,
+    "kf_level": 4.348708,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q4",
@@ -2704,7 +3086,9 @@
     "move_lo": 1.028768,
     "move_hi": 1.361257,
     "published": true,
-    "settlement": 86.66639
+    "settlement": 86.66639,
+    "kf_level": 4.462066,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q1",
@@ -2718,7 +3102,9 @@
     "move_lo": 0.632032,
     "move_hi": 0.921575,
     "published": false,
-    "settlement": 71.734374
+    "settlement": 71.734374,
+    "kf_level": 4.27297,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q2",
@@ -2732,7 +3118,9 @@
     "move_lo": 0.912474,
     "move_hi": 1.303964,
     "published": true,
-    "settlement": 73.809755
+    "settlement": 73.809755,
+    "kf_level": 4.301491,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q3",
@@ -2746,7 +3134,9 @@
     "move_lo": 0.985997,
     "move_hi": 1.338525,
     "published": true,
-    "settlement": 82.839911
+    "settlement": 82.839911,
+    "kf_level": 4.41691,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q4",
@@ -2760,7 +3150,9 @@
     "move_lo": 0.854598,
     "move_hi": 1.087656,
     "published": true,
-    "settlement": 82.476053
+    "settlement": 82.476053,
+    "kf_level": 4.412508,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q1",
@@ -2774,7 +3166,9 @@
     "move_lo": 0.895068,
     "move_hi": 1.080288,
     "published": true,
-    "settlement": 81.314139
+    "settlement": 81.314139,
+    "kf_level": 4.39832,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q2",
@@ -2788,7 +3182,9 @@
     "move_lo": 0.903064,
     "move_hi": 1.172171,
     "published": true,
-    "settlement": 82.909398
+    "settlement": 82.909398,
+    "kf_level": 4.417748,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q3",
@@ -2802,7 +3198,9 @@
     "move_lo": 0.791685,
     "move_hi": 1.022184,
     "published": true,
-    "settlement": 76.586394
+    "settlement": 76.586394,
+    "kf_level": 4.338419,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q4",
@@ -2816,7 +3214,9 @@
     "move_lo": 0.86885,
     "move_hi": 1.102081,
     "published": true,
-    "settlement": 74.034783
+    "settlement": 74.034783,
+    "kf_level": 4.304535,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q1",
@@ -2830,7 +3230,9 @@
     "move_lo": 0.957907,
     "move_hi": 1.226148,
     "published": true,
-    "settlement": 78.318851
+    "settlement": 78.318851,
+    "kf_level": 4.360788,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q2",
@@ -2844,7 +3246,9 @@
     "move_lo": 0.77951,
     "move_hi": 1.070529,
     "published": false,
-    "settlement": 73.79991
+    "settlement": 73.79991,
+    "kf_level": 4.301358,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q3",
@@ -2858,7 +3262,9 @@
     "move_lo": 0.898976,
     "move_hi": 1.266928,
     "published": true,
-    "settlement": 76.713154
+    "settlement": 76.713154,
+    "kf_level": 4.340073,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q4",
@@ -2872,7 +3278,9 @@
     "move_lo": 0.897229,
     "move_hi": 1.162248,
     "published": true,
-    "settlement": 78.632559
+    "settlement": 78.632559,
+    "kf_level": 4.364786,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q1",
@@ -2886,7 +3294,9 @@
     "move_lo": 0.812793,
     "move_hi": 1.103884,
     "published": false,
-    "settlement": 75.736637
+    "settlement": 75.736637,
+    "kf_level": 4.327262,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q2",
@@ -2900,7 +3310,9 @@
     "move_lo": 0.845234,
     "move_hi": 1.125068,
     "published": true,
-    "settlement": 73.662597
+    "settlement": 73.662597,
+    "kf_level": 4.299495,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q3",
@@ -2914,7 +3326,9 @@
     "move_lo": 0.810538,
     "move_hi": 1.068966,
     "published": true,
-    "settlement": 69.207013
+    "settlement": 69.207013,
+    "kf_level": 4.237102,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q4",
@@ -2928,7 +3342,9 @@
     "move_lo": 0.983363,
     "move_hi": 1.248407,
     "published": true,
-    "settlement": 74.0512
+    "settlement": 74.0512,
+    "kf_level": 4.304757,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q1",
@@ -2942,7 +3358,9 @@
     "move_lo": 0.795879,
     "move_hi": 1.001728,
     "published": true,
-    "settlement": 68.699599
+    "settlement": 68.699599,
+    "kf_level": 4.229743,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q2",
@@ -2956,7 +3374,9 @@
     "move_lo": 0.896419,
     "move_hi": 1.11761,
     "published": true,
-    "settlement": 67.667258
+    "settlement": 67.667258,
+    "kf_level": 4.214602,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q3",
@@ -2970,7 +3390,9 @@
     "move_lo": 0.974873,
     "move_hi": 1.202725,
     "published": true,
-    "settlement": 71.818204
+    "settlement": 71.818204,
+    "kf_level": 4.274138,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q4",
@@ -2984,7 +3406,9 @@
     "move_lo": 0.919902,
     "move_hi": 1.134339,
     "published": true,
-    "settlement": 73.959013
+    "settlement": 73.959013,
+    "kf_level": 4.303511,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q1",
@@ -2998,7 +3422,9 @@
     "move_lo": 0.858745,
     "move_hi": 1.048903,
     "published": true,
-    "settlement": 71.415335
+    "settlement": 71.415335,
+    "kf_level": 4.268513,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q2",
@@ -3012,7 +3438,9 @@
     "move_lo": 0.869229,
     "move_hi": 1.144147,
     "published": false,
-    "settlement": 70.735299
+    "settlement": 70.735299,
+    "kf_level": 4.258945,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q3",
@@ -3026,7 +3454,9 @@
     "move_lo": 0.781436,
     "move_hi": 1.054431,
     "published": true,
-    "settlement": 65.40442
+    "settlement": 65.40442,
+    "kf_level": 4.18059,
+    "kf_var": 0.000618
    }
   ],
   "market_rate_comparison": [
@@ -3042,7 +3472,9 @@
     "move_lo": 1.0,
     "move_hi": 1.0,
     "published": true,
-    "settlement": 110.587111
+    "settlement": 110.587111,
+    "kf_level": 4.705804,
+    "kf_var": 0.000784
    },
    {
     "quarter": "2016Q2",
@@ -3056,7 +3488,9 @@
     "move_lo": 0.886852,
     "move_hi": 1.092686,
     "published": true,
-    "settlement": 109.209426
+    "settlement": 109.209426,
+    "kf_level": 4.693267,
+    "kf_var": 0.000625
    },
    {
     "quarter": "2016Q3",
@@ -3070,7 +3504,9 @@
     "move_lo": 0.966067,
     "move_hi": 1.193032,
     "published": true,
-    "settlement": 115.210003
+    "settlement": 115.210003,
+    "kf_level": 4.746757,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2016Q4",
@@ -3084,7 +3520,9 @@
     "move_lo": 0.801831,
     "move_hi": 1.00432,
     "published": true,
-    "settlement": 106.98336
+    "settlement": 106.98336,
+    "kf_level": 4.672673,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q1",
@@ -3098,7 +3536,9 @@
     "move_lo": 0.950291,
     "move_hi": 1.177797,
     "published": true,
-    "settlement": 110.103056
+    "settlement": 110.103056,
+    "kf_level": 4.701417,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q2",
@@ -3112,7 +3552,9 @@
     "move_lo": 0.952546,
     "move_hi": 1.176648,
     "published": true,
-    "settlement": 115.868997
+    "settlement": 115.868997,
+    "kf_level": 4.75246,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q3",
@@ -3126,7 +3568,9 @@
     "move_lo": 0.800741,
     "move_hi": 1.030693,
     "published": true,
-    "settlement": 108.589136
+    "settlement": 108.589136,
+    "kf_level": 4.687571,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2017Q4",
@@ -3140,7 +3584,9 @@
     "move_lo": 0.903175,
     "move_hi": 1.160258,
     "published": true,
-    "settlement": 109.103382
+    "settlement": 109.103382,
+    "kf_level": 4.692296,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q1",
@@ -3154,7 +3600,9 @@
     "move_lo": 1.011002,
     "move_hi": 1.285189,
     "published": true,
-    "settlement": 121.088707
+    "settlement": 121.088707,
+    "kf_level": 4.796523,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q2",
@@ -3168,7 +3616,9 @@
     "move_lo": 0.831343,
     "move_hi": 1.079485,
     "published": true,
-    "settlement": 118.617548
+    "settlement": 118.617548,
+    "kf_level": 4.775904,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q3",
@@ -3182,7 +3632,9 @@
     "move_lo": 0.882407,
     "move_hi": 1.144713,
     "published": true,
-    "settlement": 118.570267
+    "settlement": 118.570267,
+    "kf_level": 4.775506,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2018Q4",
@@ -3196,7 +3648,9 @@
     "move_lo": 0.948388,
     "move_hi": 1.204278,
     "published": true,
-    "settlement": 124.937063
+    "settlement": 124.937063,
+    "kf_level": 4.82781,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q1",
@@ -3210,7 +3664,9 @@
     "move_lo": 0.786535,
     "move_hi": 1.020691,
     "published": true,
-    "settlement": 115.848908
+    "settlement": 115.848908,
+    "kf_level": 4.752287,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q2",
@@ -3224,7 +3680,9 @@
     "move_lo": 0.754678,
     "move_hi": 1.028145,
     "published": true,
-    "settlement": 103.16104
+    "settlement": 103.16104,
+    "kf_level": 4.636291,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q3",
@@ -3238,7 +3696,9 @@
     "move_lo": 0.966633,
     "move_hi": 1.271129,
     "published": true,
-    "settlement": 109.175083
+    "settlement": 109.175083,
+    "kf_level": 4.692953,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2019Q4",
@@ -3252,7 +3712,9 @@
     "move_lo": 0.981545,
     "move_hi": 1.274496,
     "published": true,
-    "settlement": 120.688922
+    "settlement": 120.688922,
+    "kf_level": 4.793216,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q1",
@@ -3266,7 +3728,9 @@
     "move_lo": 0.567339,
     "move_hi": 0.806237,
     "published": true,
-    "settlement": 90.565086
+    "settlement": 90.565086,
+    "kf_level": 4.506069,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q2",
@@ -3280,7 +3744,9 @@
     "move_lo": 0.754176,
     "move_hi": 1.209536,
     "published": true,
-    "settlement": 82.195333
+    "settlement": 82.195333,
+    "kf_level": 4.409099,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q3",
@@ -3294,7 +3760,9 @@
     "move_lo": 0.790918,
     "move_hi": 1.241053,
     "published": true,
-    "settlement": 79.938096
+    "settlement": 79.938096,
+    "kf_level": 4.381253,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2020Q4",
@@ -3308,7 +3776,9 @@
     "move_lo": 0.884211,
     "move_hi": 1.315738,
     "published": true,
-    "settlement": 84.35415
+    "settlement": 84.35415,
+    "kf_level": 4.435024,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q1",
@@ -3322,7 +3792,9 @@
     "move_lo": 0.720322,
     "move_hi": 1.094579,
     "published": true,
-    "settlement": 77.687573
+    "settlement": 77.687573,
+    "kf_level": 4.352695,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q2",
@@ -3336,7 +3808,9 @@
     "move_lo": 1.114405,
     "move_hi": 1.639415,
     "published": true,
-    "settlement": 96.82121
+    "settlement": 96.82121,
+    "kf_level": 4.572866,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q3",
@@ -3350,7 +3824,9 @@
     "move_lo": 0.704412,
     "move_hi": 1.044853,
     "published": true,
-    "settlement": 89.891525
+    "settlement": 89.891525,
+    "kf_level": 4.498604,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2021Q4",
@@ -3364,7 +3840,9 @@
     "move_lo": 1.020302,
     "move_hi": 1.492083,
     "published": true,
-    "settlement": 104.436333
+    "settlement": 104.436333,
+    "kf_level": 4.648578,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q1",
@@ -3378,7 +3856,9 @@
     "move_lo": 0.856607,
     "move_hi": 1.144404,
     "published": true,
-    "settlement": 106.960676
+    "settlement": 106.960676,
+    "kf_level": 4.672461,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q2",
@@ -3392,7 +3872,9 @@
     "move_lo": 0.928481,
     "move_hi": 1.219092,
     "published": true,
-    "settlement": 112.883817
+    "settlement": 112.883817,
+    "kf_level": 4.726359,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q3",
@@ -3406,7 +3888,9 @@
     "move_lo": 0.940399,
     "move_hi": 1.252366,
     "published": true,
-    "settlement": 121.784155
+    "settlement": 121.784155,
+    "kf_level": 4.80225,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2022Q4",
@@ -3420,7 +3904,9 @@
     "move_lo": 0.778986,
     "move_hi": 1.101458,
     "published": true,
-    "settlement": 116.505299
+    "settlement": 116.505299,
+    "kf_level": 4.757937,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q1",
@@ -3434,7 +3920,9 @@
     "move_lo": 0.928971,
     "move_hi": 1.377994,
     "published": true,
-    "settlement": 127.220041
+    "settlement": 127.220041,
+    "kf_level": 4.845918,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q2",
@@ -3448,7 +3936,9 @@
     "move_lo": 0.728374,
     "move_hi": 1.060707,
     "published": true,
-    "settlement": 117.075176
+    "settlement": 117.075176,
+    "kf_level": 4.762816,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q3",
@@ -3462,7 +3952,9 @@
     "move_lo": 0.742366,
     "move_hi": 1.046835,
     "published": true,
-    "settlement": 104.150326
+    "settlement": 104.150326,
+    "kf_level": 4.645835,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2023Q4",
@@ -3476,7 +3968,9 @@
     "move_lo": 0.845354,
     "move_hi": 1.216041,
     "published": true,
-    "settlement": 102.716256
+    "settlement": 102.716256,
+    "kf_level": 4.63197,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q1",
@@ -3490,7 +3984,9 @@
     "move_lo": 0.743417,
     "move_hi": 1.103083,
     "published": true,
-    "settlement": 94.710638
+    "settlement": 94.710638,
+    "kf_level": 4.550826,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q2",
@@ -3504,7 +4000,9 @@
     "move_lo": 1.02243,
     "move_hi": 1.516831,
     "published": true,
-    "settlement": 110.680884
+    "settlement": 110.680884,
+    "kf_level": 4.706651,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q3",
@@ -3518,7 +4016,9 @@
     "move_lo": 0.648351,
     "move_hi": 0.929903,
     "published": true,
-    "settlement": 93.703424
+    "settlement": 93.703424,
+    "kf_level": 4.540135,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2024Q4",
@@ -3532,7 +4032,9 @@
     "move_lo": 0.952736,
     "move_hi": 1.381952,
     "published": true,
-    "settlement": 100.821768
+    "settlement": 100.821768,
+    "kf_level": 4.613354,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q1",
@@ -3546,7 +4048,9 @@
     "move_lo": 0.801006,
     "move_hi": 1.168437,
     "published": true,
-    "settlement": 99.757004
+    "settlement": 99.757004,
+    "kf_level": 4.602737,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q2",
@@ -3560,7 +4064,9 @@
     "move_lo": 0.84186,
     "move_hi": 1.192713,
     "published": true,
-    "settlement": 99.69379
+    "settlement": 99.69379,
+    "kf_level": 4.602103,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q3",
@@ -3574,7 +4080,9 @@
     "move_lo": 0.754021,
     "move_hi": 1.071959,
     "published": true,
-    "settlement": 91.657502
+    "settlement": 91.657502,
+    "kf_level": 4.518059,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2025Q4",
@@ -3588,7 +4096,9 @@
     "move_lo": 0.966219,
     "move_hi": 1.436319,
     "published": true,
-    "settlement": 102.460423
+    "settlement": 102.460423,
+    "kf_level": 4.629477,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q1",
@@ -3602,7 +4112,9 @@
     "move_lo": 0.787428,
     "move_hi": 1.1463,
     "published": true,
-    "settlement": 100.751753
+    "settlement": 100.751753,
+    "kf_level": 4.61266,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q2",
@@ -3616,7 +4128,9 @@
     "move_lo": 0.992215,
     "move_hi": 1.349711,
     "published": true,
-    "settlement": 112.645607
+    "settlement": 112.645607,
+    "kf_level": 4.724247,
+    "kf_var": 0.000618
    },
    {
     "quarter": "2026Q3",
@@ -3630,7 +4144,9 @@
     "move_lo": 0.78358,
     "move_hi": 1.088539,
     "published": true,
-    "settlement": 108.326685
+    "settlement": 108.326685,
+    "kf_level": 4.685152,
+    "kf_var": 0.000618
    }
   ]
  },
@@ -3643,8 +4159,8 @@
   "market_rate_comparison": 240391.66666666666
  },
  "release": {
-  "built_at": "2026-10-15T23:06Z",
-  "code_commit": "5c6675b",
+  "built_at": "2026-10-15T23:35Z",
+  "code_commit": "77ed9b2",
   "inputs": {
    "sales_w2pb-icbu.json": {
     "fetched": "2026-10-16",
@@ -4401,7 +4917,7 @@
      "mode": "provisional",
      "published_at": "2026-10-16",
      "data_through": "2026-09-30",
-     "code_commit": "5c6675b",
+     "code_commit": "77ed9b2",
      "move": 1.024642391600098,
      "move_lo": 0.9402648806820818,
      "move_hi": 1.116591773482342,
@@ -6604,7 +7120,7 @@
      "mode": "provisional",
      "published_at": "2026-10-16",
      "data_through": "2026-09-30",
-     "code_commit": "5c6675b",
+     "code_commit": "77ed9b2",
      "move": 0.9958205905816538,
      "move_lo": 0.8396931078028987,
      "move_hi": 1.1809774778563098,

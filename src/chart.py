@@ -6,7 +6,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 D = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data")
-load = lambda n: list(csv.DictReader(open(os.path.join(D, f"rsi_{n}.csv"))))
+def load(n):
+    """Rows with a 'quarter' key (published citywide files label it 'period')."""
+    rows = list(csv.DictReader(open(os.path.join(D, f"rsi_{n}.csv"))))
+    for r in rows:
+        r.setdefault("quarter", r.get("period"))
+    return rows
 INK, STAB, MKT, GRID = "#1B2631", "#C0392B", "#2E6F95", "#E3E8EA"
 
 
