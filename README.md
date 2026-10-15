@@ -4,7 +4,7 @@ A transparent, quarterly price index for New York City buildings that contain re
 
 **Website:** https://retail-hedging.github.io/nyc-rent-stabilized-index/
 
-- **Latest (Q3 2026):** 57.1, where Q2 2019 = 100 (the quarter the 2019 rent law passed). That's about $150K per apartment, down from $266K.
+- **Latest (Q3 2026):** 57.1, where Q2 2019 = 100 (the quarter the 2019 rent law passed). That's about $150K per apartment, down from $263K.
 - **Market-rate rental buildings,** same method: 108.
 
 | Folder | Contents |

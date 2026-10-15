@@ -3641,5 +3641,34 @@
   "brooklyn": 238500.0,
   "queens": 255208.33333333334,
   "market_rate_comparison": 240391.66666666666
+ },
+ "release": {
+  "built_at": "2026-10-15T23:06Z",
+  "code_commit": "5c6675b",
+  "inputs": {
+   "sales_w2pb-icbu.json": {
+    "fetched": "2026-10-16",
+    "rows": 13491,
+    "sha256": "f90bc429752a4d5f"
+   },
+   "sales_usep-8jbt.json": {
+    "fetched": "2026-10-16",
+    "rows": 1479,
+    "sha256": "553405dd7f3624a0"
+   },
+   "stabilized_bbls.csv": {
+    "source": "NYS HCR 2024 building registrations (NYC Rent Guidelines Board PDFs, Nov 2025)",
+    "sha256": "a2d74246f0e53b71"
+   }
+  },
+  "parameters": {
+   "window_quarters": 12,
+   "base": "2019Q2",
+   "min_sales": 40,
+   "ridge_neighborhood": 4.0,
+   "huber_k": 1.345,
+   "kf_signal_sd": 0.048,
+   "kf_noise_sd": 0.028
+  }
  }
 }

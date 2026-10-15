@@ -8,8 +8,8 @@
 
 | | Q2 2019 | Q3 2026 | Change |
 |---|---|---|---|
-| **Rent-stabilized buildings, citywide** (settlement value) | 100 ≈ $266K/apt | **57.1 ≈ $150K/apt** | **−43%** |
-| Market-rate rental buildings, 6+ apartments (comparison) | 100 ≈ $248K/apt | 108.3 ≈ $260K/apt | +8% |
+| **Rent-stabilized buildings, citywide** (settlement value) | 100 ≈ $263K/apt | **57.1 ≈ $150K/apt** | **−43%** |
+| Market-rate rental buildings, 6+ apartments (comparison) | 100 ≈ $240K/apt | 108.3 ≈ $260K/apt | +8% |
 
 By borough (indicative): Bronx 48, Manhattan 55, Queens 65, Brooklyn 67.
 

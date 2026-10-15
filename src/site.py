@@ -108,7 +108,8 @@ def compact(rows):
 
 
 def page(title, body, active):
-    nav = "".join(f'<a href="{href}"{" style=\\"color:var(--stab)\\"" if active == key else ""}>{label}</a>'
+    on = ' style="color:var(--stab)"'
+    nav = "".join(f'<a href="{href}"{on if active == key else ""}>{label}</a>'
                   for key, href, label in [("home", "index.html", "Index"), ("method", "methodology.html", "Methodology"),
                                            ("data", "index.html#data", "Data"), ("code", REPO, "Code")])
     return f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -131,7 +132,7 @@ def build():
     qoq = 100 * (float(last["settlement_index"]) / float(prev["settlement_index"]) - 1)
     rel = meta.get("release", {})
     data = {"citywide": compact(city), "market": compact(mkt), "boroughs": boros}
-    since = 100 * (s_last / s_base - 1)
+    since = s_last - 100  # the index is defined as Q2 2019 = 100
     q_label = f"Q{last['quarter'][-1]} {last['quarter'][:4]}"
 
     rows = "".join(
@@ -148,9 +149,9 @@ def build():
   <p class="lede">This index tracks what buyers pay per apartment for whole buildings that contain rent-stabilized units, adjusted for building size, age, type and neighborhood. It is computed entirely from public records, and anyone can reproduce it.</p>
   <div class="kpis">
     <div class="kpi red"><div class="v">{s_last:.1f}</div><div class="l">Rent-stabilized index, {q_label}</div></div>
-    <div class="kpi red"><div class="v">${int(float(last['settlement_usd_per_apartment'])):,}</div><div class="l">per apartment (vs ${int(float(base['settlement_usd_per_apartment'])):,} in Q2 2019)</div></div>
+    <div class="kpi red"><div class="v">${int(float(last['settlement_usd_per_apartment'])):,}</div><div class="l">per apartment (vs ${int(float(base['usd_per_apartment'])):,} in Q2 2019)</div></div>
     <div class="kpi blue"><div class="v">{m_last:.0f}</div><div class="l">Market-rate rental buildings, same method</div></div>
-    <div class="kpi"><div class="v">{qoq:+.1f}%</div><div class="l">Change last quarter ({last['sales']} sales)</div></div>
+    <div class="kpi"><div class="v">{qoq:+.1f}%</div><div class="l">Settlement change last quarter ({last['sales']} sales)</div></div>
   </div>
 </div>
 <div class="wrap"><section style="border-top:0;padding-top:4px">
@@ -183,12 +184,12 @@ def build():
 <ul class="clean small">
 <li>Rent rules change what a building can earn, so they change what it is worth. When rent control ended in Cambridge, MA, the value of formerly controlled buildings and their neighbors rose sharply (Autor, Palmer &amp; Pathak 2014). When San Francisco expanded rent control, landlords reduced rental supply (Diamond, McQuade &amp; Qian 2019).</li>
 <li>New York's 2019 Housing Stability and Tenant Protection Act limited rent increases on stabilized apartments. The index shows stabilized buildings falling from that quarter on, while market-rate rental buildings did not.</li>
-<li><b>Cross-check:</b> Ariel Property Advisors reports stabilized building prices of $270K per unit in 2019 and $163K in 2025 (−40%). The index's levels are about $266K and $159K–$169K.</li>
+<li><b>Cross-check:</b> Ariel Property Advisors reports stabilized building prices of $270K per unit in 2019 and $163K in 2025 (−40%). The index's levels are about $263K and $159K–$169K.</li>
 </ul></div></div>
 </section>
 
 <section id="data"><h2>Quarterly values</h2>
-<div class="tablewrap"><table><thead><tr><th>Quarter</th><th>Settlement index</th><th>$ per apartment</th><th>Raw estimate</th><th>Change</th><th>95% interval of change</th><th>Sales</th><th>Max single-sale effect</th></tr></thead><tbody>{rows}</tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Quarter</th><th>Settlement index</th><th>$ per apartment</th><th>Raw estimate</th><th>Raw change</th><th>95% interval</th><th>Sales</th><th>Max single-sale effect</th></tr></thead><tbody>{rows}</tbody></table></div>
 <h3>Downloads</h3>
 <div class="dl">
 <a href="data/rsi_citywide.csv">Citywide index (CSV)</a><a href="data/rsi.json">All series + metadata (JSON)</a>

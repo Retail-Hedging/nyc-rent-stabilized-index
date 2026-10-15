@@ -1,0 +1,218 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Methodology · NYC Rent-Stabilized Building Price Index</title><meta name="description" content="A transparent, quarterly price index for New York City buildings with rent-stabilized apartments, computed from public sales records.">
+<style>
+:root{--ink:#1B2631;--muted:#5f6b73;--line:#e3e8ea;--stab:#C0392B;--mkt:#2E6F95;--bg:#fff;--tint:#f4f7f7}
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--mkt)}.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header.top{border-bottom:1px solid var(--line)}header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+header.top b{font-weight:650;letter-spacing:.2px}nav a{margin-left:18px;color:var(--ink);text-decoration:none;font-size:15px}nav a:hover{color:var(--stab)}
+.hero{padding:44px 0 18px}.eyebrow{color:var(--muted);font-size:14px;text-transform:uppercase;letter-spacing:.08em}
+h1{font-family:Georgia,"Times New Roman",serif;font-size:40px;line-height:1.15;margin:8px 0 10px;font-weight:700}
+.lede{font-size:19px;color:#2c3a44;max-width:760px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:26px 0 8px}
+.kpi{background:var(--tint);border-radius:10px;padding:16px 18px}.kpi .v{font-family:Georgia,serif;font-size:34px;font-weight:700;line-height:1.1}
+.kpi .l{font-size:14px;color:var(--muted);margin-top:4px}.kpi.red .v{color:var(--stab)}.kpi.blue .v{color:var(--mkt)}
+section{padding:26px 0;border-top:1px solid var(--line)}h2{font-family:Georgia,serif;font-size:27px;margin:0 0 12px}
+h3{font-size:18px;margin:18px 0 6px}.muted{color:var(--muted)}.small{font-size:14px}
+.chartbox{position:relative}.toggles{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 10px}
+.toggles label{font-size:14px;background:var(--tint);border-radius:999px;padding:5px 12px;cursor:pointer;user-select:none}
+.toggles input{margin-right:6px;vertical-align:-1px}svg{width:100%;height:auto;display:block}
+.tip{position:absolute;pointer-events:none;background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:13px;box-shadow:0 4px 14px rgba(0,0,0,.08);display:none;min-width:170px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{background:var(--tint);border-radius:10px;padding:16px}
+.step .n{font-family:Georgia,serif;font-size:24px;color:var(--stab);font-weight:700}.step b{display:block;margin:4px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}th,td{padding:7px 8px;border-bottom:1px solid var(--line);text-align:right}
+th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:600}.tablewrap{max-height:430px;overflow:auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}ul.clean{padding-left:18px}ul.clean li{margin:6px 0}
+.dl a{display:inline-block;margin:4px 8px 4px 0;padding:7px 12px;border:1px solid var(--line);border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}
+.dl a:hover{border-color:var(--stab)}footer{padding:26px 0 40px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.note{background:#fff8e6;border:1px solid #f1dfb0;border-radius:10px;padding:12px 16px;font-size:14px}
+.md h1{font-size:34px}.md h2{margin-top:30px}.md table{margin:10px 0}.md code{background:var(--tint);padding:1px 5px;border-radius:4px;font-size:90%}
+.md pre{background:var(--tint);padding:12px;border-radius:8px;overflow:auto}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.steps,.grid2{grid-template-columns:1fr}h1{font-size:31px}nav a{margin-left:10px}}
+</style></head><body>
+<header class="top"><div class="wrap"><b>NYC Rent-Stabilized Building Price Index</b><nav><a href="index.html">Index</a><a href="methodology.html" style="color:var(--stab)">Methodology</a><a href="index.html#data">Data</a><a href="https://github.com/Retail-Hedging/nyc-rent-stabilized-index">Code</a></nav></div></header>
+<div class="wrap md" style="padding:30px 20px"><h1>NYC Rent-Stabilized Building Price Index (RSI): methodology</h1>
+<p><strong>What it measures:</strong> the quality-adjusted price per apartment paid in whole-building sales of New York City buildings that contain rent-stabilized apartments. It runs quarterly, citywide, with Q2 2019 = 100 (the quarter the 2019 Housing Stability and Tenant Protection Act passed).</p>
+<p><strong>Design goal:</strong> a value anyone can recompute from public data, that a single trade can't move, that is never revised once published, and whose changes can't be predicted from its own history. Those are the properties a settlement index for derivatives needs.</p>
+<h2>Results (2016 Q1 – 2026 Q3)</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Q2 2019</th>
+<th>Q3 2026</th>
+<th>Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rent-stabilized buildings, citywide</strong> (settlement value)</td>
+<td>100 ≈ $263K/apt</td>
+<td><strong>57.1 ≈ $150K/apt</strong></td>
+<td><strong>−43%</strong></td>
+</tr>
+<tr>
+<td>Market-rate rental buildings, 6+ apartments (comparison)</td>
+<td>100 ≈ $240K/apt</td>
+<td>108.3 ≈ $260K/apt</td>
+<td>+8%</td>
+</tr>
+</tbody>
+</table>
+<p>By borough (indicative): Bronx 48, Manhattan 55, Queens 65, Brooklyn 67.</p>
+<p><strong>Cross-check:</strong> Ariel Property Advisors (a brokerage) reports the average price per unit of rent-stabilized buildings falling from $270K in 2019 to $163K in 2025, which is −40%. The RSI's 2025 levels are $159K–$169K.</p>
+<p>Charts: <code>data/rsi_chart.png</code>, <code>data/rsi_boroughs.png</code>.</p>
+<h2>1. Data (all public)</h2>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Source</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sales</td>
+<td>NYC Department of Finance, via NYC Open Data: annualized sales 2016+ (<code>w2pb-icbu</code>) and the latest 12 months (<code>usep-8jbt</code>)</td>
+<td>Buildings with 6+ apartments, $100K+ sale price. The overlapping quarter is de-duplicated on BBL + date + price.</td>
+</tr>
+<tr>
+<td>Stabilization status</td>
+<td>NYS Homes &amp; Community Renewal 2024 building registrations, published by the NYC Rent Guidelines Board as borough PDFs (Nov 2025)</td>
+<td>47,198 buildings (BBLs), parsed by <code>src/parse_rgb.py</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Raw snapshots are kept in <code>raw/</code>, so every published value can be reproduced from the exact files used.</p>
+<h2>2. Universe and screens</h2>
+<p>A sale enters the index only if all of the following hold. Each exclusion and its reason is written to <code>data/sales_excluded.csv</code>.</p>
+<ol>
+<li><strong>Core rent-stabilized.</strong> The building (BBL) is on the stabilized list and is not:</li>
+<li>a 421-a building (temporary stabilization on new construction)</li>
+<li>a co-op or condo</li>
+<li>a Class B building (rooming house)</li>
+<li>a Section 610 building</li>
+<li><strong>A rental building</strong> (DOF class C walk-up, D elevator or S mixed-use) with 6 or more apartments.</li>
+<li><strong>Not a portfolio sale.</strong> DOF records a multi-building deal's total price on every lot. Same date, same price and same borough on several lots means the per-building price is unknown, so the sale is excluded. 1,255 such records.</li>
+<li><strong>Not a single-apartment transfer.</strong> An address with an apartment number and under $40,000 per apartment is excluded. 464 records.</li>
+<li><strong>Between $10K and $3M per apartment,</strong> and within 3× the interquartile range of log price per apartment for its borough and year (data errors).</li>
+</ol>
+<p>The 2016–2026 data has 5,896 qualifying sales, 51–248 per quarter.</p>
+<h2>3. Model</h2>
+<p>For each quarter T, a hedonic regression is fitted on the sales of the 12 quarters ending at T:</p>
+<pre><code>ln(price per apartment) = quarter effects + borough + neighborhood + ln(apartments)
+                          + ln(sq ft per apartment) [missing-flagged] + building era (5 bands)
+                          + elevator + mixed-use
+</code></pre>
+<ul>
+<li><strong>Robust.</strong> A Huber M-estimator (k = 1.345, MAD scale) down-weights unusual sales instead of letting them pull the fit.</li>
+<li><strong>Neighborhood shrinkage.</strong> A ridge penalty (λ = 4) on the ~250 DOF neighborhood effects pulls thinly traded neighborhoods toward their borough.</li>
+<li><strong>Movement splicing (no revisions).</strong> The newest quarter's change, exp(d_T − d_{T−1}), is chained onto the already-published series. Past values never change, and the test suite checks this (<code>test_published_values_never_revise</code>). This is the rolling-window time-dummy method in the IMF/Eurostat <em>Residential Property Price Indices Handbook</em>.</li>
+<li><strong>Error bars.</strong> Each quarter-on-quarter change ships with a 95% confidence interval from a robust (sandwich) covariance. The median interval width is about ±7.5%.</li>
+<li><strong>Single-sale influence.</strong> Each quarter reports the largest change any one sale could make to that quarter's movement (closed-form leave-one-out). It has never exceeded <strong>0.9%</strong>, and a wash sale at 20× market moves the index less than 1% (<code>test_single_extreme_sale_cannot_move_index</code>).</li>
+<li><strong>Publication threshold.</strong> A quarter needs at least 40 sales citywide; it has never fallen below 51.</li>
+</ul>
+<h2>4. Settlement value</h2>
+<p>The raw quarterly estimate is noisy, and its noise reverses: quarter-on-quarter autocorrelation is −0.44, and only 33% of quarters move the same way as the previous one. A contrarian strategy on the raw series would have earned about 1.65% a quarter from the other side of any contract settled on it.</p>
+<p>The <strong>settlement value</strong> is therefore a real-time local-level Kalman filter of the log index:
+- Signal sd is 4.8% and noise sd 2.8% per quarter, estimated by maximum likelihood on 2016–2026 and then fixed. They are re-estimated at most yearly, with notice.
+- The filter uses only data up to each quarter, so it is also never revised.
+- On the history it removes the exploitable pattern: autocorrelation drops to −0.22 and the contrarian edge to 0.05% a quarter.
+- Quarterly volatility is 5.1%.</p>
+<p>Both the raw index and the settlement value are published; contracts settle on the settlement value.</p>
+<h2>5. Files</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Contents</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data/rsi_citywide.csv</code></td>
+<td>quarter, index, settlement index, $ per apartment (settlement and raw), sales count, quarterly change with 95% CI, max single-sale effect, published flag, plain median $/apt, regression window</td>
+</tr>
+<tr>
+<td><code>data/rsi_{manhattan,bronx,brooklyn,queens}.csv</code></td>
+<td>Borough series (indicative only: 15–90 sales a quarter, about ±10–15% noise)</td>
+</tr>
+<tr>
+<td><code>data/rsi_market_rate_comparison.csv</code></td>
+<td>Same method on 6+ apartment rental buildings with no stabilized units</td>
+</tr>
+<tr>
+<td><code>data/rsi.json</code></td>
+<td>Everything above plus metadata</td>
+</tr>
+<tr>
+<td><code>data/sales_clean.csv</code> / <code>data/sales_excluded.csv</code></td>
+<td>Every sale used, and every screened-out sale with its reason</td>
+</tr>
+</tbody>
+</table>
+<p>Rebuild (Python 3.12 with numpy, matplotlib, pymupdf, markdown):
+<code>python src/fetch_sales.py &amp;&amp; python src/parse_rgb.py &amp;&amp; python src/rsi.py build &amp;&amp; python src/chart.py &amp;&amp; python src/site.py</code>.
+Tests: <code>python -m pytest tests</code>. The input PDFs come from the Rent Guidelines Board page and are kept in <code>raw/</code> with the sales snapshots.</p>
+<h2>6. Research basis</h2>
+<table>
+<thead>
+<tr>
+<th>Choice</th>
+<th>Why</th>
+<th>Sources</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hedonic, not repeat-sales</td>
+<td>Apartment buildings rarely sell twice in a decade, so repeat-sales would discard most of the data. Hedonic indexes are revised far less when extended, which matters for derivatives settlement, and they signal turning points sooner.</td>
+<td>Clapham, Englund, Quigley &amp; Redfearn (2006), <em>Real Estate Economics</em>, doi:10.1111/j.1540-6229.2006.00167.x; Shimizu, Nishimura &amp; Watanabe (2010), doi:10.1515/jbnst-2010-0612; Hill (2013), <em>Journal of Economic Surveys</em>, doi:10.1111/j.1467-6419.2012.00731.x</td>
+</tr>
+<tr>
+<td>Rolling-window time dummies, chained</td>
+<td>Standard method for official residential property price indices. Chaining keeps published values fixed, and revision risk is a known obstacle for house-price derivatives.</td>
+<td>Eurostat et al. (2013), <em>Handbook on Residential Property Price Indices</em>; Deng &amp; Quigley (2008), <em>JREFE</em>, doi:10.1007/s11146-008-9113-7</td>
+</tr>
+<tr>
+<td>Noise filtering for a thin market</td>
+<td>Transaction indexes from scarce data are noisy. Tradable commercial indexes use signal extraction or frequency conversion.</td>
+<td>Bokhari &amp; Geltner (2010), <em>JREFE</em>, doi:10.1007/s11146-010-9261-4; Fisher, Geltner &amp; Pollakowski (2007), doi:10.1007/s11146-007-9001-6; Bourassa, Cantoni &amp; Hoesli (2017), doi:10.1080/10835547.2017.12090448</td>
+</tr>
+<tr>
+<td>Index-settled real-estate contracts</td>
+<td>The original case for real-estate futures settled on an index.</td>
+<td>Case, Shiller &amp; Weiss (1993), <em>Journal of Portfolio Management</em>, doi:10.3905/jpm.1993.409441</td>
+</tr>
+<tr>
+<td>Rent regulation moves building values</td>
+<td>Ending rent control raised the value of formerly controlled buildings; expanding it led landlords to cut rental supply.</td>
+<td>Autor, Palmer &amp; Pathak (2014), <em>JPE</em>, doi:10.1086/675536; Diamond, McQuade &amp; Qian (2019), <em>AER</em>, doi:10.1257/aer.20181289</td>
+</tr>
+<tr>
+<td>Governance</td>
+<td>Benchmark administration structure: governance, quality, methodology, accountability.</td>
+<td>IOSCO (2013), <em>Principles for Financial Benchmarks</em></td>
+</tr>
+</tbody>
+</table>
+<h2>7. Governance</h2>
+<p>Modeled on the IOSCO <em>Principles for Financial Benchmarks</em> (2013). This is a research preview: no administrator has been formally designated, and the index has not been independently audited.</p>
+<ul>
+<li><strong>Methodology and code are public.</strong> Each release records its code version (git commit) and SHA-256 checksums of every input snapshot (<code>rsi.json</code> → <code>release</code>).</li>
+<li><strong>Data sufficiency.</strong> A quarter is published only with at least 40 qualifying sales.</li>
+<li><strong>Changes</strong> are announced at least one quarter ahead. The settlement-filter parameters are re-estimated at most yearly, with notice.</li>
+<li><strong>Corrections.</strong> Published values are not revised. A data error is corrected with a dated notice, and the original value is kept.</li>
+<li><strong>Questions and complaints:</strong> GitHub issues on the public repository.</li>
+</ul>
+<h2>8. Limitations</h2>
+<ul>
+<li><strong>Stabilization status is a 2024 snapshot.</strong> Buildings that fully left stabilization before 2024 (mostly before 2019, when deregulation was still allowed) are missing from the earlier years, which slightly flatters the pre-2019 series.</li>
+<li><strong>Portfolio sales are excluded.</strong> Large distressed portfolio trades are a real part of this market, but their per-building prices are not recorded.</li>
+<li><strong>Lag and timing.</strong> DOF publishes sales with a lag of weeks, and the sale date is the deed date, not the contract date, so the index is roughly one to three months behind deal-making.</li>
+<li><strong>Quality controls are limited.</strong> The model sees size, age, elevator, mixed use and location. It does not see the share of apartments stabilized, building condition, or rent rolls. Those are the main drivers within this market, so the remaining noise is large.</li>
+<li><strong>No independent verification yet.</strong> The method is standard and the code is open. Before contracts settle on it, an independent replication and a published governance rulebook (who runs it, how errors are corrected, notice periods) are needed.</li>
+</ul></div>
+<footer><div class="wrap">Research preview published by Retail Hedging. Computed from NYC Department of Finance sales records and NYS Homes and Community Renewal building registrations; not affiliated with or endorsed by the City or State of New York. Not investment advice. Code and data: <a href="https://github.com/Retail-Hedging/nyc-rent-stabilized-index">Retail-Hedging/nyc-rent-stabilized-index</a>.</div></footer>
+</body></html>
