@@ -45,52 +45,64 @@ th:first-child,td:first-child{text-align:left}th{color:var(--muted);font-weight:
 CHART_JS = r"""
 const D = window.RSI;
 const svg = document.getElementById('chart'), tip = document.getElementById('tip');
-const W = 1000, H = 440, M = {l: 52, r: 70, t: 18, b: 34};
-const qs = D.citywide.map(r => r.q);
-const X = i => M.l + i * (W - M.l - M.r) / (qs.length - 1);
+const W = 1000, H = 440, M = {l: 52, r: 80, t: 18, b: 34};
+const mi = p => { const y = +p.slice(0, 4); return p.includes('Q') ? (y - 2016) * 12 + (+p.slice(-1) - 1) * 3 + 1 : (y - 2016) * 12 + (+p.slice(5, 7) - 1); };
+const last = Math.max(mi(D.monthly[D.monthly.length - 1].p), mi(D.citywide[D.citywide.length - 1].p));
+const X = m => M.l + m * (W - M.l - M.r) / last;
 const COLORS = {manhattan:'#7D3C98', bronx:'#B03A2E', brooklyn:'#D68910', queens:'#239B56'};
 function draw(){
-  const show = {mkt: document.getElementById('t-mkt').checked, raw: document.getElementById('t-raw').checked, boro: document.getElementById('t-boro').checked};
-  let vals = D.citywide.map(r => r.s).concat(show.raw ? D.citywide.map(r => r.i) : []);
+  const show = {mkt: document.getElementById('t-mkt').checked, live: document.getElementById('t-live').checked, boro: document.getElementById('t-boro').checked};
+  let vals = D.citywide.map(r => r.s);
+  if (show.live) vals = vals.concat(D.monthly.map(r => r.s));
   if (show.mkt) vals = vals.concat(D.market.map(r => r.s));
   if (show.boro) for (const k in D.boroughs) vals = vals.concat(D.boroughs[k].map(r => r.s));
   const lo = Math.floor(Math.min(...vals) / 10) * 10 - 5, hi = Math.ceil(Math.max(...vals) / 10) * 10 + 5;
   const Y = v => M.t + (hi - v) * (H - M.t - M.b) / (hi - lo);
-  const path = (arr, key) => arr.map((r, i) => (i ? 'L' : 'M') + X(i).toFixed(1) + ' ' + Y(r[key]).toFixed(1)).join(' ');
+  const path = arr => arr.map((r, i) => (i ? 'L' : 'M') + X(mi(r.p)).toFixed(1) + ' ' + Y(r.s).toFixed(1)).join(' ');
   let s = '';
   for (let v = Math.ceil(lo / 20) * 20; v <= hi; v += 20)
     s += `<line x1="${M.l}" x2="${W - M.r}" y1="${Y(v)}" y2="${Y(v)}" stroke="${v === 100 ? '#9aa' : '#e8ecee'}" ${v === 100 ? 'stroke-dasharray="3 3"' : ''}/><text x="${M.l - 8}" y="${Y(v) + 4}" text-anchor="end" font-size="12" fill="#5f6b73">${v}</text>`;
-  qs.forEach((q, i) => { if (q.endsWith('Q1')) s += `<text x="${X(i)}" y="${H - 10}" text-anchor="middle" font-size="12" fill="#5f6b73">${q.slice(0, 4)}</text>`; });
-  const i19 = qs.indexOf('2019Q2');
-  s += `<line x1="${X(i19)}" x2="${X(i19)}" y1="${M.t}" y2="${H - M.b}" stroke="#888" stroke-width="1"/><text x="${X(i19) + 6}" y="${M.t + 12}" font-size="12" fill="#5f6b73">June 2019 rent law</text>`;
+  for (let y = 2016; (y - 2016) * 12 <= last; y++) s += `<text x="${X((y - 2016) * 12 + 1)}" y="${H - 10}" text-anchor="middle" font-size="12" fill="#5f6b73">${y}</text>`;
+  const i19 = mi('2019-06');
+  s += `<line x1="${X(i19)}" x2="${X(i19)}" y1="${M.t}" y2="${H - M.b}" stroke="#888"/><text x="${X(i19) + 6}" y="${M.t + 12}" font-size="12" fill="#5f6b73">June 2019 rent law</text>`;
+  const fz = mi('2026-06');
+  s += `<line x1="${X(fz)}" x2="${X(fz)}" y1="${M.t}" y2="${H - M.b}" stroke="#bbb" stroke-dasharray="2 3"/><text x="${X(fz) - 6}" y="${M.t + 12}" text-anchor="end" font-size="12" fill="#5f6b73">2026 rent freeze vote</text>`;
   if (show.boro) for (const k in D.boroughs) {
     const a = D.boroughs[k];
-    s += `<path d="${path(a, 's')}" fill="none" stroke="${COLORS[k]}" stroke-width="1.6" opacity=".85"/>`;
-    s += `<text x="${X(a.length - 1) + 6}" y="${Y(a[a.length - 1].s) + 4}" font-size="12" fill="${COLORS[k]}">${k[0].toUpperCase() + k.slice(1)}</text>`;
+    s += `<path d="${path(a)}" fill="none" stroke="${COLORS[k]}" stroke-width="1.5" opacity=".8"/>`;
   }
   if (show.mkt) {
-    if (show.raw) s += `<path d="${path(D.market, 'i')}" fill="none" stroke="#2E6F95" stroke-width="1" opacity=".3"/>`;
-    s += `<path d="${path(D.market, 's')}" fill="none" stroke="#2E6F95" stroke-width="2.4"/>`;
+    s += `<path d="${path(D.market)}" fill="none" stroke="#2E6F95" stroke-width="2.2"/>`;
     const m = D.market[D.market.length - 1];
-    s += `<text x="${X(qs.length - 1) + 6}" y="${Y(m.s) + 4}" font-size="14" font-weight="700" fill="#2E6F95">${m.s.toFixed(0)}</text>`;
+    s += `<text x="${X(mi(m.p)) + 6}" y="${Y(m.s) + 4}" font-size="13" font-weight="700" fill="#2E6F95">${m.s.toFixed(0)}</text>`;
   }
-  if (show.raw) s += `<path d="${path(D.citywide, 'i')}" fill="none" stroke="#C0392B" stroke-width="1" opacity=".35"/>`;
-  s += `<path d="${path(D.citywide, 's')}" fill="none" stroke="#C0392B" stroke-width="3"/>`;
+  if (show.live) {
+    const off = D.monthly.filter(r => r.st !== 'provisional'), pv = D.monthly.filter(r => r.st === 'provisional');
+    s += `<path d="${path(off)}" fill="none" stroke="#E59866" stroke-width="1.6"/>`;
+    if (pv.length) s += `<path d="${path([off[off.length - 1]].concat(pv))}" fill="none" stroke="#E59866" stroke-width="1.6" stroke-dasharray="4 3"/>`;
+  }
+  const off = D.citywide.filter(r => r.st !== 'provisional'), pv = D.citywide.filter(r => r.st === 'provisional');
+  s += `<path d="${path(off)}" fill="none" stroke="#C0392B" stroke-width="3"/>`;
+  if (pv.length) {
+    s += `<path d="${path([off[off.length - 1]].concat(pv))}" fill="none" stroke="#C0392B" stroke-width="3" stroke-dasharray="6 4"/>`;
+    const q = pv[pv.length - 1];
+    s += `<circle cx="${X(mi(q.p))}" cy="${Y(q.s)}" r="5" fill="#fff" stroke="#C0392B" stroke-width="2.5"/>`;
+  }
   const c = D.citywide[D.citywide.length - 1];
-  s += `<text x="${X(qs.length - 1) + 6}" y="${Y(c.s) + 5}" font-size="15" font-weight="700" fill="#C0392B">${c.s.toFixed(1)}</text>`;
-  s += `<line id="hover" x1="0" x2="0" y1="${M.t}" y2="${H - M.b}" stroke="#1B2631" stroke-width="1" opacity="0"/>`;
+  s += `<text x="${X(mi(c.p)) + 9}" y="${Y(c.s) + 5}" font-size="15" font-weight="700" fill="#C0392B">${c.s.toFixed(1)}</text>`;
+  s += `<line id="hover" x1="0" x2="0" y1="${M.t}" y2="${H - M.b}" stroke="#1B2631" opacity="0"/>`;
   svg.innerHTML = s;
 }
 svg.addEventListener('mousemove', e => {
   const r = svg.getBoundingClientRect(), x = (e.clientX - r.left) * W / r.width;
-  const i = Math.max(0, Math.min(qs.length - 1, Math.round((x - M.l) / ((W - M.l - M.r) / (qs.length - 1)))));
-  const c = D.citywide[i], m = D.market[i], h = document.getElementById('hover');
-  h.setAttribute('x1', X(i)); h.setAttribute('x2', X(i)); h.setAttribute('opacity', '.25');
+  const m = Math.round((x - M.l) * last / (W - M.l - M.r));
+  const near = arr => arr.reduce((b, v) => Math.abs(mi(v.p) - m) < Math.abs(mi(b.p) - m) ? v : b, arr[0]);
+  const c = near(D.citywide), mo = near(D.monthly), h = document.getElementById('hover');
+  h.setAttribute('x1', X(mi(c.p))); h.setAttribute('x2', X(mi(c.p))); h.setAttribute('opacity', '.25');
   tip.style.display = 'block';
-  tip.innerHTML = `<b>${c.q}</b><br><span style="color:#C0392B">Rent-stabilized ${c.s.toFixed(1)}</span> &middot; $${c.usd.toLocaleString()}/apt<br>` +
-    `<span class="muted">raw ${c.i.toFixed(1)} &middot; ${c.n} sales</span><br>` + (m ? `<span style="color:#2E6F95">Market-rate ${m.s.toFixed(1)}</span>` : '');
-  const px = (X(i) / W) * r.width;
-  tip.style.left = Math.min(px + 14, r.width - 190) + 'px'; tip.style.top = '20px';
+  tip.innerHTML = `<b>${c.p}</b> <span class="muted">${c.st}</span><br><span style="color:#C0392B">Index ${c.s.toFixed(1)}</span> &middot; $${c.usd.toLocaleString()}/apt &middot; ${c.n} sales` +
+    `<br><span style="color:#d35400">Monthly ${mo.p}: ${mo.s.toFixed(1)}</span> <span class="muted">${mo.st}</span>`;
+  tip.style.left = Math.min((X(mi(c.p)) / W) * r.width + 14, r.width - 230) + 'px'; tip.style.top = '20px';
 });
 svg.addEventListener('mouseleave', () => { tip.style.display = 'none'; const h = document.getElementById('hover'); if (h) h.setAttribute('opacity', '0'); });
 document.querySelectorAll('.toggles input').forEach(el => el.addEventListener('change', draw));
@@ -103,7 +115,13 @@ def load(name):
 
 
 def compact(rows):
-    return [{"q": r["quarter"], "i": round(float(r["index"]), 2), "s": round(float(r["settlement_index"]), 2),
+    """Indicative series (boroughs, market-rate comparison)."""
+    return [{"p": r["quarter"], "s": round(float(r["settlement_index"]), 2)} for r in rows]
+
+
+def compact_ledger(rows):
+    """Citywide published series (official + provisional) from publish.py."""
+    return [{"p": r["period"], "st": r["status"], "s": round(float(r["settlement_index"]), 2), "i": round(float(r["index"]), 2),
              "usd": int(float(r["settlement_usd_per_apartment"] or 0)), "n": int(r["sales"])} for r in rows]
 
 
@@ -123,51 +141,64 @@ def page(title, body, active):
 
 def build():
     meta = json.load(open(os.path.join(DATA, "rsi.json")))
-    city, mkt = load("citywide"), load("market_rate_comparison")
+    city = list(csv.DictReader(open(os.path.join(DATA, "rsi_citywide.csv"))))
+    monthly = list(csv.DictReader(open(os.path.join(DATA, "rsi_citywide_monthly.csv"))))
+    mkt = load("market_rate_comparison")
     boros = {b: compact(load(b)) for b in ("manhattan", "bronx", "brooklyn", "queens")}
-    last, prev = city[-1], city[-2]
-    base = next(r for r in city if r["quarter"] == "2019Q2")
-    s_last, s_base = float(last["settlement_index"]), float(base["settlement_index"])
+    official = [r for r in city if r["status"] != "provisional"]
+    prov = [r for r in city if r["status"] == "provisional"]
+    last, prev = official[-1], official[-2]
+    base = next(r for r in city if r["period"] == "2019Q2")
+    s_last = float(last["settlement_index"])
     m_last = float(mkt[-1]["settlement_index"])
-    qoq = 100 * (float(last["settlement_index"]) / float(prev["settlement_index"]) - 1)
+    qoq = 100 * (s_last / float(prev["settlement_index"]) - 1)
+    live = monthly[-1]
     rel = meta.get("release", {})
-    data = {"citywide": compact(city), "market": compact(mkt), "boroughs": boros}
+    data = {"citywide": compact_ledger(city), "monthly": compact_ledger(monthly), "market": compact(mkt), "boroughs": boros}
     since = s_last - 100  # the index is defined as Q2 2019 = 100
-    q_label = f"Q{last['quarter'][-1]} {last['quarter'][:4]}"
+    qname = lambda p: f"Q{p[-1]} {p[:4]}"
+    mname = lambda p: __import__("datetime").date(int(p[:4]), int(p[5:7]), 1).strftime("%B %Y")
+    q_label = qname(last["period"])
+    through = meta.get("data_through", "")
+    prov_note = (f" Provisional {qname(prov[-1]['period'])}: <b>{float(prov[-1]['settlement_index']):.1f}</b> "
+                 f"({prov[-1]['sales']} sales so far, official once the data runs 30 days past quarter end).") if prov else ""
 
     rows = "".join(
-        f"<tr><td>{r['quarter']}</td><td>{float(r['settlement_index']):.1f}</td><td>${int(float(r['settlement_usd_per_apartment'])):,}</td>"
-        f"<td>{float(r['index']):.1f}</td><td>{float(r['qoq_change_pct']):+.1f}%</td>"
-        f"<td class='muted'>{float(r['qoq_ci95_lo_pct']):+.1f}% to {float(r['qoq_ci95_hi_pct']):+.1f}%</td><td>{r['sales']}</td>"
-        f"<td>{(r['max_single_sale_effect_pct'] + '%') if r['max_single_sale_effect_pct'] else '–'}</td></tr>"
+        f"<tr><td>{r['period']}</td><td class='{'muted' if r['status'] == 'provisional' else ''}'>{r['status']}</td>"
+        f"<td>{float(r['settlement_index']):.1f}</td><td>${int(float(r['settlement_usd_per_apartment'])):,}</td>"
+        f"<td>{float(r['index']):.1f}</td><td>{float(r['change_pct'] or 0):+.1f}%</td>"
+        f"<td class='muted'>{float(r['ci95_lo_pct'] or 0):+.1f}% to {float(r['ci95_hi_pct'] or 0):+.1f}%</td><td>{r['sales']}</td>"
+        f"<td>{(r['max_single_sale_effect_pct'] + '%') if r['max_single_sale_effect_pct'] else '–'}</td><td class='muted'>{r['published_at']}</td></tr>"
         for r in reversed(city))
+    infl_max = max(float(r["max_single_sale_effect_pct"]) for r in city if r["max_single_sale_effect_pct"])
 
     body = f"""
 <div class="wrap hero">
-  <div class="eyebrow">Quarterly · citywide · Q2 2019 = 100 · latest: {q_label}</div>
+  <div class="eyebrow">Citywide · Q2 2019 = 100 · updated monthly · data through {through}</div>
   <h1>Rent-stabilized buildings in New York City have lost {abs(since):.0f}% of their value since 2019.</h1>
   <p class="lede">This index tracks what buyers pay per apartment for whole buildings that contain rent-stabilized units, adjusted for building size, age, type and neighborhood. It is computed entirely from public records, and anyone can reproduce it.</p>
   <div class="kpis">
-    <div class="kpi red"><div class="v">{s_last:.1f}</div><div class="l">Rent-stabilized index, {q_label}</div></div>
+    <div class="kpi red"><div class="v">{s_last:.1f}</div><div class="l">Official index, {q_label} ({qoq:+.1f}% on the quarter)</div></div>
     <div class="kpi red"><div class="v">${int(float(last['settlement_usd_per_apartment'])):,}</div><div class="l">per apartment (vs ${int(float(base['usd_per_apartment'])):,} in Q2 2019)</div></div>
+    <div class="kpi" style="background:#fdf2e9"><div class="v" style="color:#d35400">{float(live['settlement_index']):.1f}</div><div class="l">Latest monthly reading, {mname(live['period'])} ({live['status']}, {live['sales']} sales)</div></div>
     <div class="kpi blue"><div class="v">{m_last:.0f}</div><div class="l">Market-rate rental buildings, same method</div></div>
-    <div class="kpi"><div class="v">{qoq:+.1f}%</div><div class="l">Settlement change last quarter ({last['sales']} sales)</div></div>
   </div>
+  <p class="small muted">{prov_note.strip()}</p>
 </div>
 <div class="wrap"><section style="border-top:0;padding-top:4px">
-  <div class="toggles"><label><input type="checkbox" id="t-mkt" checked>Market-rate comparison</label><label><input type="checkbox" id="t-boro">Boroughs (indicative)</label><label><input type="checkbox" id="t-raw">Raw quarterly estimates</label></div>
+  <div class="toggles"><label><input type="checkbox" id="t-mkt" checked>Market-rate comparison</label><label><input type="checkbox" id="t-boro">Boroughs (indicative)</label><label><input type="checkbox" id="t-live" checked>Monthly readings</label></div>
   <div class="chartbox"><svg id="chart" viewBox="0 0 1000 440" role="img" aria-label="Index chart, Q2 2019 = 100"></svg><div class="tip" id="tip"></div></div>
-  <p class="small muted">Bold lines are settlement values (filtered quarterly estimates; see methodology). Hover for values. Borough series rest on 15–90 sales a quarter and are shown for context only.</p>
+  <p class="small muted">Red: official quarterly index (dashed = provisional). Orange: monthly readings, which are noisier and published sooner. Hover for values. Borough series rest on 15–90 sales a quarter and are shown for context only.</p>
 </section>
 
 <section><h2>How the index is built</h2>
 <div class="steps">
-  <div class="step"><div class="n">1</div><b>Every sale</b>All sales of NYC buildings with 6+ apartments since 2016, from the Department of Finance: {sum(int(r['sales']) for r in city):,} qualifying sales.</div>
+  <div class="step"><div class="n">1</div><b>Every sale</b>All sales of NYC buildings with 6+ apartments since 2016, from the Department of Finance: {sum(int(r['sales']) for r in city):,} qualifying sales, refreshed every month as the city publishes new records.</div>
   <div class="step"><div class="n">2</div><b>Only rent-stabilized buildings</b>Matched by tax lot to the State's 2024 registration list (47,198 buildings). 421-a tax-break buildings, co-ops and rooming houses are excluded.</div>
   <div class="step"><div class="n">3</div><b>Only real market sales</b>Portfolio deals, single-apartment transfers and data errors are screened out. Every exclusion is published with its reason.</div>
   <div class="step"><div class="n">4</div><b>Like-for-like</b>A robust hedonic regression compares price per apartment while holding size, age, elevator, mixed use and neighborhood constant.</div>
-  <div class="step"><div class="n">5</div><b>Never revised</b>Each new quarter is chained onto the published series, so past values never change.</div>
-  <div class="step"><div class="n">6</div><b>Hard to move</b>No single sale has ever changed a quarter by more than {max(float(r['max_single_sale_effect_pct']) for r in city if r['max_single_sale_effect_pct']):.1f}%. The settlement value filters out measurement noise.</div>
+  <div class="step"><div class="n">5</div><b>Never revised</b>Published values are frozen in a ledger, and each new period is chained on. Late-recorded deeds never rewrite the past.</div>
+  <div class="step"><div class="n">6</div><b>Hard to move</b>No single sale has ever changed a quarter by more than {infl_max:.1f}%. The settlement value filters out measurement noise.</div>
 </div>
 <p><a href="methodology.html">Full methodology →</a></p>
 </section>
@@ -189,10 +220,10 @@ def build():
 </section>
 
 <section id="data"><h2>Quarterly values</h2>
-<div class="tablewrap"><table><thead><tr><th>Quarter</th><th>Settlement index</th><th>$ per apartment</th><th>Raw estimate</th><th>Raw change</th><th>95% interval</th><th>Sales</th><th>Max single-sale effect</th></tr></thead><tbody>{rows}</tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Quarter</th><th>Status</th><th>Index</th><th>$ per apartment</th><th>Raw estimate</th><th>Raw change</th><th>95% interval</th><th>Sales</th><th>Max single-sale effect</th><th>Published</th></tr></thead><tbody>{rows}</tbody></table></div>
 <h3>Downloads</h3>
 <div class="dl">
-<a href="data/rsi_citywide.csv">Citywide index (CSV)</a><a href="data/rsi.json">All series + metadata (JSON)</a>
+<a href="data/rsi_citywide.csv">Citywide quarterly (CSV)</a><a href="data/rsi_citywide_monthly.csv">Citywide monthly (CSV)</a><a href="data/ledger_Q.json">Published-value ledger (JSON)</a><a href="data/rsi.json">All series + metadata (JSON)</a>
 <a href="data/rsi_market_rate_comparison.csv">Market-rate comparison (CSV)</a><a href="data/rsi_manhattan.csv">Manhattan</a><a href="data/rsi_bronx.csv">Bronx</a><a href="data/rsi_brooklyn.csv">Brooklyn</a><a href="data/rsi_queens.csv">Queens</a>
 <a href="data/sales_clean.csv">Every sale used (CSV)</a><a href="data/sales_excluded.csv">Every sale excluded, with reason (CSV)</a><a href="data/stabilized_bbls.csv">Stabilized buildings list (CSV)</a>
 </div>
@@ -204,6 +235,7 @@ def build():
 <p>The index follows the structure of the IOSCO <i>Principles for Financial Benchmarks</i> (2013): governance, benchmark quality, methodology quality and accountability.</p>
 <ul class="clean">
 <li><b>Transparent methodology:</b> the full method and code are public, and every number can be recomputed from the published inputs.</li>
+<li><b>Update schedule:</b> an automated job checks the city's data daily and republishes when new records appear (the city updates monthly, mid-month). A period becomes official once the data runs 30 days past its end; until then it is marked provisional.</li>
 <li><b>Data sufficiency:</b> a quarter is published only with at least 40 qualifying sales. The minimum so far is {min(int(r['sales']) for r in city)}.</li>
 <li><b>Changes:</b> method changes are announced at least one quarter ahead, and filter parameters are re-estimated at most once a year, with notice.</li>
 </ul></div><div><ul class="clean">

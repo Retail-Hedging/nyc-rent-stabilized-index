@@ -1,4 +1,4 @@
-import math, os, random, sys
+import json, math, os, random, sys
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 import rsi
 
@@ -75,3 +75,21 @@ def test_screens():
     assert reasons.count("portfolio sale (one price recorded on several lots)") == 2
     assert "single-apartment transfer" in reasons and "not in stabilized list" in reasons
     assert any(r.startswith("stabilized: 421-a") for r in reasons)
+
+
+def test_ledger_freezes_published_values_when_history_is_revised(tmp_path):
+    import publish
+    obs = synthetic(PATH)
+    for o in obs:
+        o["month"] = o["date"][:7]
+    cut = lambda q: [o for o in obs if o["quarter"] <= q]
+    # first publication: data through mid-2020Q3 -> quarters up to 2020Q2 are official
+    led1, prov1 = publish.update(cut("2020Q3"), "Q", "2020-08-15", {}, data_dir=str(tmp_path))
+    frozen = json.loads(json.dumps(led1["periods"]))
+    assert frozen[-1]["period"] == "2020Q2" and [p["period"] for p in prov1] == ["2020Q3"]
+    # the city then revises history (late deeds add sales at different prices) and new quarters arrive
+    revised = [dict(o, ppu=o["ppu"] * (1.15 if o["quarter"] < "2018Q1" else 1.0)) for o in obs]
+    led2, _ = publish.update(revised, "Q", "2021-12-31", {}, data_dir=str(tmp_path))
+    for a, b in zip(frozen, led2["periods"]):
+        assert a == b  # nothing already published changes
+    assert [p["period"] for p in led2["periods"][len(frozen):]] == ["2020Q3", "2020Q4", "2021Q1", "2021Q2", "2021Q3"]

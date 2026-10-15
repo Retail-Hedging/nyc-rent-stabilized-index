@@ -4,9 +4,9 @@
 
 **Design goal:** a value anyone can recompute from public data, that a single trade can't move, that is never revised once published, and whose changes can't be predicted from its own history. Those are the properties a settlement index for derivatives needs.
 
-## Results (2016 Q1 – 2026 Q3)
+## Results (2016 Q1 – 2026 Q3; Q3 2026 provisional, official through Q2 2026 = 56.0)
 
-| | Q2 2019 | Q3 2026 | Change |
+| | Q2 2019 | Q3 2026 (provisional) | Change |
 |---|---|---|---|
 | **Rent-stabilized buildings, citywide** (settlement value) | 100 ≈ $263K/apt | **57.1 ≈ $150K/apt** | **−43%** |
 | Market-rate rental buildings, 6+ apartments (comparison) | 100 ≈ $240K/apt | 108.3 ≈ $260K/apt | +8% |
@@ -71,21 +71,30 @@ The **settlement value** is therefore a real-time local-level Kalman filter of t
 
 Both the raw index and the settlement value are published; contracts settle on the settlement value.
 
-## 5. Files
+## 5. Publication: monthly readings, a frozen ledger, provisional values
+
+- **Schedule.** A GitHub Actions job checks the city's data every day and republishes when new records appear. The city refreshes its sales data monthly, around mid-month. Sales reach public data about 4–6 weeks after closing; deeds are recorded a median of 13 days after signing, and 20% take more than 19 days.
+- **Completeness rule.** A period becomes official once the data runs 30 days past its end. Later periods with sales are published as provisional readings and replaced when they become official.
+- **Frozen ledger.** Official values live in `data/ledger_Q.json` (quarterly) and `data/ledger_M.json` (monthly) and are never changed. The city adds late-recorded deeds to past months, so a new period is chained onto the last published value, using the movement estimated on the latest data, and the settlement filter continues from its stored state. A test checks that revised history cannot change a published value.
+- **Monthly readings.** These use the same model with month effects and a 36-month window, base April–June 2019 = 100. A typical month has 44 qualifying sales (13 in the thinnest), so monthly readings use their own filter: signal sd 2.8%, noise sd 6.9% per month, estimated by maximum likelihood and then fixed. After filtering they show no exploitable pattern: autocorrelation 0.02. The quarterly series stays the benchmark.
+- **What "live" means.** No public source reports building sales in real time. Between releases the market's live estimate is whatever contracts referencing the index trade at, which is also how Case-Shiller futures work (that index is published with a two-month lag).
+
+## 6. Files
 
 | File | Contents |
 |---|---|
-| `data/rsi_citywide.csv` | quarter, index, settlement index, $ per apartment (settlement and raw), sales count, quarterly change with 95% CI, max single-sale effect, published flag, plain median $/apt, regression window |
+| `data/rsi_citywide.csv` / `rsi_citywide_monthly.csv` | Published citywide series: period, status (official / provisional), settlement index, $ per apartment, raw index, sales, change with 95% CI, max single-sale effect, publication date, data-through date |
+| `data/ledger_Q.json` / `ledger_M.json` | The frozen record of every official value and its filter state |
 | `data/rsi_{manhattan,bronx,brooklyn,queens}.csv` | Borough series (indicative only: 15–90 sales a quarter, about ±10–15% noise) |
 | `data/rsi_market_rate_comparison.csv` | Same method on 6+ apartment rental buildings with no stabilized units |
 | `data/rsi.json` | Everything above plus metadata |
 | `data/sales_clean.csv` / `data/sales_excluded.csv` | Every sale used, and every screened-out sale with its reason |
 
 Rebuild (Python 3.12 with numpy, matplotlib, pymupdf, markdown):
-`python src/fetch_sales.py && python src/parse_rgb.py && python src/rsi.py build && python src/chart.py && python src/site.py`.
+`python src/fetch_sales.py && python src/parse_rgb.py && python src/rsi.py build && python src/publish.py && python src/chart.py && python src/site.py`.
 Tests: `python -m pytest tests`. The input PDFs come from the Rent Guidelines Board page and are kept in `raw/` with the sales snapshots.
 
-## 6. Research basis
+## 7. Research basis
 
 | Choice | Why | Sources |
 |---|---|---|
@@ -96,7 +105,7 @@ Tests: `python -m pytest tests`. The input PDFs come from the Rent Guidelines Bo
 | Rent regulation moves building values | Ending rent control raised the value of formerly controlled buildings; expanding it led landlords to cut rental supply. | Autor, Palmer & Pathak (2014), *JPE*, doi:10.1086/675536; Diamond, McQuade & Qian (2019), *AER*, doi:10.1257/aer.20181289 |
 | Governance | Benchmark administration structure: governance, quality, methodology, accountability. | IOSCO (2013), *Principles for Financial Benchmarks* |
 
-## 7. Governance
+## 8. Governance
 
 Modeled on the IOSCO *Principles for Financial Benchmarks* (2013). This is a research preview: no administrator has been formally designated, and the index has not been independently audited.
 
@@ -106,7 +115,7 @@ Modeled on the IOSCO *Principles for Financial Benchmarks* (2013). This is a res
 - **Corrections.** Published values are not revised. A data error is corrected with a dated notice, and the original value is kept.
 - **Questions and complaints:** GitHub issues on the public repository.
 
-## 8. Limitations
+## 9. Limitations
 
 - **Stabilization status is a 2024 snapshot.** Buildings that fully left stabilization before 2024 (mostly before 2019, when deregulation was still allowed) are missing from the earlier years, which slightly flatters the pre-2019 series.
 - **Portfolio sales are excluded.** Large distressed portfolio trades are a real part of this market, but their per-building prices are not recorded.

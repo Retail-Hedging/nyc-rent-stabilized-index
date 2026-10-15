@@ -27,5 +27,9 @@ if __name__ == "__main__":
     os.makedirs(os.path.join(ROOT, "raw"), exist_ok=True)
     for ds in ("w2pb-icbu", "usep-8jbt"):
         rows = fetch(ds)
-        json.dump({"dataset": ds, "fetched": time.strftime("%Y-%m-%d"), "where": WHERE, "rows": rows}, open(os.path.join(ROOT, "raw", f"sales_{ds}.json"), "w"))
-        print(ds, len(rows), "rows", file=sys.stderr)
+        path = os.path.join(ROOT, "raw", f"sales_{ds}.json")
+        if os.path.exists(path) and json.load(open(path))["rows"] == rows:
+            print(ds, len(rows), "rows, unchanged", file=sys.stderr)
+            continue  # leave the snapshot (and its fetch date) untouched so "no new data" means no change
+        json.dump({"dataset": ds, "fetched": time.strftime("%Y-%m-%d"), "where": WHERE, "rows": rows}, open(path, "w"))
+        print(ds, len(rows), "rows, updated", file=sys.stderr)

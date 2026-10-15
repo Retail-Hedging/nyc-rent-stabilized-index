@@ -49,6 +49,18 @@ def quarter(date):
     return f"{date[:4]}Q{(int(date[5:7]) - 1) // 3 + 1}"
 
 
+def month(date):
+    return date[:7]
+
+
+def period_end(label):
+    """Last calendar day of a period label ('2026Q3' or '2026-09'), as YYYY-MM-DD."""
+    import calendar
+    y = int(label[:4])
+    m = int(label[-1]) * 3 if "Q" in label else int(label[5:7])
+    return f"{y}-{m:02d}-{calendar.monthrange(y, m)[1]:02d}"
+
+
 def num(v):
     try:
         return float(str(v).replace(",", ""))
@@ -83,7 +95,7 @@ def load_sales():
             rows.append({
                 "bbl": bbl, "borough": boro, "neighborhood": (r.get("neighborhood") or "").strip(), "address": r.get("address") or "",
                 "zip": r.get("zip_code") or "", "cls": (r.get("building_class_at_time_of") or "").strip(), "date": date,
-                "quarter": quarter(date), "price": price, "units": num(r.get("residential_units")),
+                "quarter": quarter(date), "month": month(date), "price": price, "units": num(r.get("residential_units")),
                 "commercial": num(r.get("commercial_units")), "sqft": num(r.get("gross_square_feet")),
                 "year": int(num(r.get("year_built"))), "source": ds,
             })
@@ -233,27 +245,36 @@ def max_single_sale_influence(fit):
 
 
 def all_quarters(obs):
+    """Every period between the first and last observed (quarters 'YYYYQn' or months 'YYYY-MM')."""
     qs = sorted({o["quarter"] for o in obs})
     y0, y1 = int(qs[0][:4]), int(qs[-1][:4])
-    full = [f"{y}Q{q}" for y in range(y0, y1 + 1) for q in range(1, 5)]
+    if "-" in qs[0]:
+        full = [f"{y}-{m:02d}" for y in range(y0, y1 + 1) for m in range(1, 13)]
+    else:
+        full = [f"{y}Q{q}" for y in range(y0, y1 + 1) for q in range(1, 5)]
     return [q for q in full if qs[0] <= q <= qs[-1]]
 
 
-def build_series(obs, influence=True, min_n=MIN_N):
+def as_periods(obs, freq):
+    """Copy of obs with the 'quarter' field set to the period label for freq ('Q' or 'M')."""
+    return obs if freq == "Q" else [{**o, "quarter": o["month"]} for o in obs]
+
+
+def build_series(obs, influence=True, min_n=MIN_N, window=WINDOW, base_period=BASE, kf=None):
     """Rolling-window time-dummy index with movement splicing. Returns list of per-quarter dicts."""
     quarters = all_quarters(obs)
     count = Counter(o["quarter"] for o in obs)
     out = []
     # first window: its quarter effects define the initial history
-    first = quarters[:WINDOW]
+    first = quarters[:window]
     f0 = window_fit([o for o in obs if o["quarter"] in first], first)
     level = [math.exp(v) for v in f0["d"]]
     for i, q in enumerate(first):
         se = step_se(f0, i - 1, i) if i else 0.0
         out.append({"quarter": q, "raw": level[i], "n": count[q], "move": level[i] / level[i - 1] if i else 1.0, "move_se": se,
                     "window": f"{first[0]}-{first[-1]}", "influence": None})
-    for t in range(WINDOW, len(quarters)):
-        win = quarters[t - WINDOW + 1:t + 1]
+    for t in range(window, len(quarters)):
+        win = quarters[t - window + 1:t + 1]
         sub = [o for o in obs if o["quarter"] in win]
         f = window_fit(sub, win)
         move = math.exp(f["d"][-1] - f["d"][-2])
@@ -261,26 +282,29 @@ def build_series(obs, influence=True, min_n=MIN_N):
         infl = max_single_sale_influence(f) if influence else None
         out.append({"quarter": quarters[t], "raw": out[-1]["raw"] * move, "n": count[quarters[t]], "move": move, "move_se": se,
                     "window": f"{win[0]}-{win[-1]}", "influence": infl})
-    base = next((o["raw"] for o in out if o["quarter"] == BASE), out[0]["raw"])
+    base = next((o["raw"] for o in out if o["quarter"] == base_period), out[0]["raw"])
     for o in out:
         o["index"] = 100 * o["raw"] / base
         o["move_lo"] = o["move"] * math.exp(-1.96 * o["move_se"])
         o["move_hi"] = o["move"] * math.exp(1.96 * o["move_se"])
         o["published"] = o["n"] >= min_n
-    return settlement_filter(out)
+    return settlement_filter(out, *(kf or (KF_SIGNAL_VAR, KF_NOISE_VAR)))
 
 
-def settlement_filter(series):
-    """Adds 'settlement': filtered index (real-time local-level Kalman filter on log index, fixed parameters)."""
-    level, var = math.log(series[0]["index"]), KF_NOISE_VAR
+def kf_step(level, var, y, signal_var, noise_var):
+    """One step of the local-level Kalman filter on log index. Returns (level, var)."""
+    pred_var = var + signal_var
+    gain = pred_var / (pred_var + noise_var)
+    return level + gain * (y - level), (1 - gain) * pred_var
+
+
+def settlement_filter(series, signal_var=KF_SIGNAL_VAR, noise_var=KF_NOISE_VAR):
+    """Adds 'settlement' (+ filter state): real-time local-level Kalman filter on log index, fixed parameters."""
+    level, var = math.log(series[0]["index"]), noise_var
     for i, o in enumerate(series):
-        y = math.log(o["index"])
         if i:
-            pred_var = var + KF_SIGNAL_VAR
-            gain = pred_var / (pred_var + KF_NOISE_VAR)
-            level += gain * (y - level)
-            var = (1 - gain) * pred_var
-        o["settlement"] = math.exp(level)
+            level, var = kf_step(level, var, math.log(o["index"]), signal_var, noise_var)
+        o["settlement"], o["kf_level"], o["kf_var"] = math.exp(level), level, var
     return series
 
 

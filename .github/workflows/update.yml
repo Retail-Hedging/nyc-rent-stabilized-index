@@ -1,0 +1,68 @@
+# Keeps the index live: checks the city's data every day, rebuilds and republishes when new records appear,
+# and deploys the website. Uses only public data; needs no secrets.
+name: Update index and website
+
+on:
+  schedule:
+    - cron: "17 14 * * *"  # daily, 14:17 UTC (the city refreshes its sales data monthly, mid-month)
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-index
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install numpy matplotlib markdown pytest
+      - name: Fetch the city's sales records
+        run: python src/fetch_sales.py
+      - name: Check for new records
+        id: changed
+        run: |
+          if git diff --quiet -- raw/; then echo "changed=false" >> "$GITHUB_OUTPUT"; else echo "changed=true" >> "$GITHUB_OUTPUT"; fi
+      - name: Test, rebuild and commit
+        if: steps.changed.outputs.changed == 'true'
+        run: |
+          python -m pytest -q tests
+          python src/rsi.py build
+          python src/publish.py
+          python src/chart.py
+          python src/site.py
+          git config user.name "rsi-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add raw data docs
+          git commit -m "Data update: city records through $(python -c 'import json; print(json.load(open("data/rsi.json"))["data_through"])')"
+          git push
+
+  deploy:
+    needs: update
+    if: always() && (needs.update.result == 'success' || needs.update.result == 'skipped')
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+      - id: deployment
+        uses: actions/deploy-pages@v4
