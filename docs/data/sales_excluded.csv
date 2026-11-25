@@ -3228,7 +3228,7 @@ bbl,date,address,cls,units,price,reason
 3051620020,2026-02-20,"816 OCEAN AVENUE, 41",D1,41.0,79850000.0,portfolio sale (one price recorded on several lots)
 4017850026,2026-02-20,38-12 114TH STREET,C1,8.0,1500000.0,stabilized: 421-a / co-op / Class B / 610
 4006300033,2026-02-20,28-32 37 STREET,C2,6.0,1326000.0,stabilized: 421-a / co-op / Class B / 610
-1020950029,2026-02-25,"601 WEST 148TH STREET, 5C",D7,18.0,318849.0,single-apartment transfer
+1020950029,2026-02-25,"601 WEST 148TH STREET, 2B",D7,18.0,318849.0,single-apartment transfer
 1020950029,2026-02-25,"601 WEST 148TH STREET, 6B",D7,18.0,271040.0,single-apartment transfer
 3032430054,2026-02-26,83 STOCKHOLM STREET,C1,8.0,4100000.0,portfolio sale (one price recorded on several lots)
 2032030044,2026-02-27,2471 DAVIDSON AVENUE,C1,31.0,2200000.0,stabilized: 421-a / co-op / Class B / 610
@@ -3423,4 +3423,18 @@ bbl,date,address,cls,units,price,reason
 1013230034,2026-09-23,234 EAST 50 STREET,C1,25.0,32500000.0,portfolio sale (one price recorded on several lots)
 3031700009,2026-09-23,1157 MYRTLE AVENUE,C7,10.0,4200000.0,stabilized: 421-a / co-op / Class B / 610
 1018460059,2026-09-24,"282 MANHATTAN AVE, 2N",C4,10.0,301987.0,single-apartment transfer
+3050880021,2026-09-24,200 LINDEN BOULEVARD,D6,69.0,26851500.0,stabilized: 421-a / co-op / Class B / 610
 1010230061,2026-09-28,260 WEST 52 STREET,D6,215.0,103850227.0,stabilized: 421-a / co-op / Class B / 610
+1003860003,2026-10-06,41 AVENUE B,D7,23.0,17950000.0,stabilized: 421-a / co-op / Class B / 610
+1020710015,2026-10-07,51 HAMILTON PLACE,D1,29.0,2340212.0,stabilized: 421-a / co-op / Class B / 610
+2041940025,2026-10-07,2900 ST THERESA AVENUE,D1,54.0,7250000.0,portfolio sale (one price recorded on several lots)
+2041940032,2026-10-07,2916 ST THERESA AVENUE,D1,49.0,7250000.0,portfolio sale (one price recorded on several lots)
+3004030029,2026-10-07,370 BALTIC STREET,C1,8.0,5175000.0,portfolio sale (one price recorded on several lots)
+1013960057,2026-10-13,800 LEXINGTON AVENUE,S9,6.0,11500000.0,portfolio sale (one price recorded on several lots)
+3065760026,2026-10-13,1448 WEST 8 STREET,C1,16.0,1870000.0,stabilized: 421-a / co-op / Class B / 610
+4035750003,2026-10-21,10-15 SENECA AVENUE,C2,6.0,1150000.0,stabilized: 421-a / co-op / Class B / 610
+1005800011,2026-10-27,"70 CHARLTON STREET, 5C",D9,122.0,2375000.0,stabilized: 421-a / co-op / Class B / 610
+2025240056,2026-10-29,989 OGDEN AVENUE,C1,14.0,3000000.0,portfolio sale (one price recorded on several lots)
+2025240057,2026-10-29,987 OGDEN AVENUE,C1,14.0,3000000.0,portfolio sale (one price recorded on several lots)
+1015430049,2026-10-30,1560 2 AVENUE,C7,10.0,8000000.0,portfolio sale (one price recorded on several lots)
+1015430149,2026-10-30,304 EAST 81 STREET,C7,11.0,8000000.0,portfolio sale (one price recorded on several lots)
